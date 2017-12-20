@@ -1,7 +1,7 @@
 import config from './config';
-import apiRouter from './api';
+const apiRouter = require('./api');
 
-import express from 'express';
+const express = require('express');
 const server = express();
 
 require('./services/passport');
