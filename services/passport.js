@@ -1,4 +1,4 @@
-const keys = require('../config/keys');
+const keys = require('../config/keys.js');
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const _callbackURL = 'http://ec2-52-89-243-4.us-west-2.compute.amazonaws.com:8080/auth/google/callback';
