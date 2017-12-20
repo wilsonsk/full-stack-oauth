@@ -8,8 +8,7 @@
     "npm": "5.4.2"
   },
   "scripts": {
-    "start-dev": "nodemon --exec babel-node server.js --ignore public/",
-    "start": "babel-node server.js --ignore public/",
+    "start": "nodemon --exec babel-node server.js --ignore public/",
     "dev": "webpack -wd"
   },
   "repository": {
