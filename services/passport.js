@@ -17,7 +17,7 @@ passport.use(
 		if(!existingUser){
 			new User({googleID: profile.id}).save();
 		}
-	}
+	});
     }
   )
 );
