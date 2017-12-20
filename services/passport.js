@@ -1,17 +1,18 @@
-const keys = require('../config/keys.js');
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const _callbackURL = 'http://ec2-52-89-243-4.us-west-2.compute.amazonaws.com:8080/auth/google/callback';
+const keys = require('../config/keys');
 
 passport.use(
-        new GoogleStrategy({
-                clientID: keys.googleClientID,
-                clientSecret: keys.googleClientSecret,
-                callbackURL: _callbackURL
-        },
-        (accessToken, refreshToken, profile, done) => {
-                console.log(accessToken);
-        })
+  new GoogleStrategy(
+    {
+      clientID: keys.googleClientID,
+      clientSecret: keys.googleClientSecret,
+      callbackURL: '/auth/google/callback'
+    },
+    (accessToken, refreshToken, profile, done) => {
+      console.log('access token', accessToken);
+      console.log('refresh token', refreshToken);
+      console.log('profile', profile);
+    }
+  )
 );
-
-
