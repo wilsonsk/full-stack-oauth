@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "A webcrawler written in node JS, react JS, python, and using Mongodb",
   "main": "index.js",
+  "engines": {
+    "node": "8.7.0",
+    "npm": "5.4.2"
+  },
   "scripts": {
     "start": "nodemon --exec babel-node server.js --ignore public/",
     "dev": "webpack -wd"
