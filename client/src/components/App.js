@@ -8,7 +8,7 @@ const Landing = () => <h2>Landing</h2>
 
 const App = () => {
     return (
-	<div>
+	<div className="container">
 		<BrowserRouter>
 			<div>
 				<Header />
@@ -17,7 +17,6 @@ const App = () => {
 				<Route path="/surveys/new" component={SurveyNew} />
 			</div>
 		</BrowserRouter>
-		<a href="/auth/google">Sign in With Google</a>
       	</div>
     );
 }
