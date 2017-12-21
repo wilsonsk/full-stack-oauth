@@ -4,22 +4,24 @@ import { connect } from 'react-redux';
 
 class Header extends Component {
 	renderContent() {
-		case default:
-			return (
-				<li>
-					<a href="/api/log">Log Out</a>
-				</li>
-			);
+		switch(this.props.auth) {
+			default:
+				return (
+					<li>
+						<a href="/api/log">Log Out</a>
+					</li>
+				);
 
-		case null:
-			return;
+			case null:
+				return;
 
-		case false:
-			return (
-				<li>
-					<a href="/auth/google">Login with Google</a>
-				</li>
-			);
+			case false:
+				return (
+					<li>
+						<a href="/auth/google">Login with Google</a>
+					</li>
+				);
+		}
 	}
 
 	render() {
