@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 class Header extends Component {
 	renderContent() {
-		default:
+		case default:
 			return (
 				<li>
 					<a href="/api/log">Log Out</a>
