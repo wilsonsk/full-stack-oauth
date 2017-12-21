@@ -4,6 +4,7 @@ const passport = require('passport');
 const express = require('express');
 const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
+const bodyParser = require('body-parser');
 const keys = require('./config/keys');
 
 mongoose.connect(keys.mongoURI);
@@ -16,10 +17,12 @@ app.use(
 		keys: [keys.cookieKey]	
 	})
 );
+app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use(passport.session());
 
 require('./routes/authRoutes')(app);
+require('./routes/paymentsRoutes')(app);
 
 if(process.env.NODE_ENV === 'production') {
 	// serve prod assets
