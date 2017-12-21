@@ -21,5 +21,11 @@ app.use(passport.session());
 
 require('./routes/authRoutes')(app);
 
+if(process.env.NODE_ENV === 'production') {
+	// serve prod assets
+	app.use(express.static('client/build'));
+	// serve index.html
+}
+
 const PORT = process.env.PORT || 8080;
 app.listen(PORT);
