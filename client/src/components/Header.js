@@ -13,7 +13,7 @@ class Header extends Component {
 							<a href="/auth/google">Login with Google</a>
 						</li>
 					</ul>
-				</di>	
+				</div>	
 			</nav>
 		);
 	}
