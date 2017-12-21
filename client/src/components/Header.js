@@ -3,6 +3,25 @@ import { connect } from 'react-redux';
 
 
 class Header extends Component {
+	renderContent() {
+		default:
+			return (
+				<li>
+					<a href="/api/log">Log Out</a>
+				</li>
+			);
+
+		case null:
+			return;
+
+		case false:
+			return (
+				<li>
+					<a href="/auth/google">Login with Google</a>
+				</li>
+			);
+	}
+
 	render() {
 		return (
 			<nav>
@@ -11,9 +30,7 @@ class Header extends Component {
 						Full Stack Oauth
 					</a>
 					<ul className="right">
-						<li>
-							<a href="/auth/google">Login with Google</a>
-						</li>
+						{this.renderContent()}
 					</ul>
 				</div>	
 			</nav>
