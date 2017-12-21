@@ -5,13 +5,6 @@ import { connect } from 'react-redux';
 class Header extends Component {
 	renderContent() {
 		switch(this.props.auth) {
-			default:
-				return (
-					<li>
-						<a href="/api/log">Log Out</a>
-					</li>
-				);
-
 			case null:
 				return;
 
@@ -19,6 +12,13 @@ class Header extends Component {
 				return (
 					<li>
 						<a href="/auth/google">Login with Google</a>
+					</li>
+				);
+
+			default:
+				return (
+					<li>
+						<a href="/api/log">Log Out</a>
 					</li>
 				);
 		}
