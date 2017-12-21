@@ -1,16 +1,24 @@
 import React from 'react';
+import { BrowserRouter, Route  } from 'react-router-dom';
+
+const Header = () => <h2>Header</h2>
+const Dashboard = () => <h2>Dashboard</h2>
+const SurveryNew = () => <h2>SurveyNew</h2>
+const Landing = () => <h2>Landing</h2>
 
 const App = () => {
     return (
-      <div className="App">
-        <header className="App-header">
-	  <h1>Hello Full Stack</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-	<a href="/auth/google">Sign in With Google</a>
-      </div>
+	<div>
+		<BrowserRouter>
+			<div>
+				<Header />
+				<Route exact={true} path="/" component={Landing} />
+				<Route exact path="/surveys" component={Dashboard} />
+				<Route path="/surveys/new" component={SurveyNew} />
+			</div>
+		</BrowserRouter>
+		<a href="/auth/google">Sign in With Google</a>
+      	</div>
     );
 }
 
