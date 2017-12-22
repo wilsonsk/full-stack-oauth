@@ -12,6 +12,6 @@ module.exports = app => {
 		});		
 		req.user.credits += 1;
 		const user = await req.user.save();
-		res.redirect('/surveys');
+		res.send(user);
 	});
 };

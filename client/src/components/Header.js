@@ -5,6 +5,10 @@ import { Link } from 'react-router-dom';
 import Payments from './Payments';
 
 class Header extends Component {
+	componentWillMount() {
+		this.props.fetchUser();
+	}
+
 	renderContent() {
 		switch(this.props.auth) {
 			case null:
@@ -47,4 +51,4 @@ function mapStateToProps(state) {
 	return { auth: state.auth };
 }
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps, actions)(Header);
