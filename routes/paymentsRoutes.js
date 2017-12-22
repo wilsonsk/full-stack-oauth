@@ -9,6 +9,9 @@ module.exports = app => {
 			description: '$1 for international exchange',
 			source: req.body.id
 		});		
+		req.user.credits += 1;
+		const user = await req.user.save();
+		res.send(user);
 		console.log(chargeObj);
 	});
 };
