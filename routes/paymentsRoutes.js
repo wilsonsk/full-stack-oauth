@@ -11,7 +11,7 @@ module.exports = app => {
 			source: req.body.id
 		});		
 		req.user.credits += 1;
-		const user await req.user.save();
+		const user = await req.user.save();
 		console.log(user);
 		res.send(user);
 	});
