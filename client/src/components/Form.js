@@ -1,4 +1,5 @@
 import React, { Component} from 'react';
+import { Field, reduxForm } from 'redux-form';
 import { Button, Header, Icon, Modal, Transition, Form, Input, Select, TextArea, Dropdown } from 'semantic-ui-react';
 
 class Form extends Component {
