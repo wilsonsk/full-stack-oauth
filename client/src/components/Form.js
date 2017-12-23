@@ -6,7 +6,6 @@ class Form extends Component {
 		console.log(values);
 	}
 
-	youSendChange(event, data) {
 	render() {
 		return (
 			<Transition animation="fade">
