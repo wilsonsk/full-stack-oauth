@@ -2,7 +2,7 @@ import React, { Component} from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Button, Header, Icon, Modal, Transition, Form, Input, Select, TextArea, Dropdown } from 'semantic-ui-react';
 
-class Form extends Component {
+class MyForm extends Component {
 	submit(values, dispatch) {
 		console.log(values);
 	}
@@ -34,4 +34,4 @@ class Form extends Component {
 
 export default reduxForm({
 	form: 'Exchange'
-})(Form);
+})(MyForm);
