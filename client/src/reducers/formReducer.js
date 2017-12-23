@@ -9,7 +9,7 @@ export default function(state={
 		case FETCH_USER:
 			return action.payload || false;
 		case ADD_SEND_AMOUNT:
-			return state = [...state, sent_amounts: action.payload];
+			return state = {...state, sent_amounts: action.payload};
 		case FETCH_RECIPIENT_AMOUNT:
 			return state;
 		default:
