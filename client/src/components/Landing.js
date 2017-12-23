@@ -2,7 +2,7 @@ import React from 'react';
 
 const Landing = () => {
 	return (
-		<div className={{ display: 'flex', flex-wrap: 'wrap', flex-direction: 'row', align-items: 'center', }}>
+		<div className={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row', alignItems: 'center', }}>
 			<div>
 				<h1>This is a heroshot</h1>	
 			</div>
