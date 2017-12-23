@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
 
 import formFields from './formFields';
+import MyField from './MyField';
 
 import * as actions from '../../actions';
 
