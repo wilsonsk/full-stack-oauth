@@ -5,7 +5,7 @@ import { reduxForm, Field } from 'redux-form';
 
 import formFields from './formFields';
 
-import * as actions from '../actions';
+import * as actions from '../../actions';
 
 class MyForm extends Component {
 	handleSubmit() {
