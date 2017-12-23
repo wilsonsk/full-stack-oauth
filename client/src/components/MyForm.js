@@ -10,7 +10,7 @@ class MyForm extends Component {
 	render() {
 		return (
 			<Transition animation="fade">
-				<Modal trigger={<a><Icon name="add" /></a>} closeIcon>
+				<Modal trigger={<Button>SmartExchange</Button>}>
 					<Header content="Create an exchange" />
 					<Modal.Content>
 						<Form onSubmit={this.submit()}>
