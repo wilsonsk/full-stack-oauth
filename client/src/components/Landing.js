@@ -1,5 +1,5 @@
 import React from 'react';
-import MyForm from './Form';
+import MyForm from './MyForm';
 
 const Landing = () => {
 	return (
