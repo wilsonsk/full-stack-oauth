@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Button, Checkbox, Form } from 'semantic-ui-react'
-import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
 
 import formFields from './formFields';
@@ -37,4 +36,7 @@ class MyForm extends Component {
 		);
 	}
 }
-export default connect(null, actions)(MyForm);
+
+export default reduxForm({
+	form: 'myForm'
+})(MyForm);
