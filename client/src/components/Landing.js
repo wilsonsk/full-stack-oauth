@@ -1,4 +1,5 @@
 import React from 'react';
+import Form from './Form';
 
 const Landing = () => {
 	return (
@@ -8,6 +9,7 @@ const Landing = () => {
 			</div>
 			<div>
 				<h1>This is a login CTA</h1>
+				<Form />
 			</div>
 		</div>
 	);
