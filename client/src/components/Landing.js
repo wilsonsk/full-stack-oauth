@@ -1,6 +1,6 @@
 import React from 'react';
 import MyForm from './form/MyForm';
-import { Grid } from 'semantic-react-io';
+import { Grid } from 'semantic-react-ui';
 
 const gridStyle = {
 	display: 'flex',
