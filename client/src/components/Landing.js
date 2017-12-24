@@ -1,5 +1,6 @@
 import React from 'react';
 import MyForm from './form/MyForm';
+import { Grid } from 'semantic-react-io';
 
 const gridStyle = {
 	display: 'flex',
@@ -15,15 +16,16 @@ const cellStyle = {
 
 const Landing = () => {
 	return (
-		<div style={gridStyle}>
-			<div style={cellStyle}>
-				<h1>This is a heroshot</h1>	
-			</div>
-			<div styyle={cellStyle}>
-				<h1>This is a login CTA</h1>
-				<MyForm />
-			</div>
-		</div>
+		<Grid divided='vertically'>
+			<Grid.Row columns={2}>
+				<Grid.Column>
+					<h1>This is a heroshot</h1>	
+				</Grid.Column>
+				<Grid.Column>
+					<MyForm />
+				</Grid.Column>
+			</Grid.Row>
+		</Grid>
 	);
 };
 
