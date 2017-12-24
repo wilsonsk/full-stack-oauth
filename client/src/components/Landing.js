@@ -15,11 +15,11 @@ const cellStyle = {
 
 const Landing = () => {
 	return (
-		<div className={gridStyle}>
-			<div className={cellStyle}>
+		<div style={gridStyle}>
+			<div style={cellStyle}>
 				<h1>This is a heroshot</h1>	
 			</div>
-			<div className={cellStyle}>
+			<div styyle={cellStyle}>
 				<h1>This is a login CTA</h1>
 				<MyForm />
 			</div>
