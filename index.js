@@ -1,5 +1,6 @@
 require('./models/User');
 require('./models/Survey');
+require('./models/Photo');
 require('./services/passport');
 const passport = require('passport');
 const express = require('express');
@@ -25,6 +26,7 @@ app.use(passport.session());
 require('./routes/authRoutes')(app);
 require('./routes/paymentsRoutes')(app);
 require('./routes/surveyRoutes')(app);
+require('./routes/photosRoutes')(app);
 
 if(process.env.NODE_ENV === 'production') {
 	// serve prod assets

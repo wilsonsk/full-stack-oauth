@@ -6,6 +6,10 @@ import Payments from './Payments';
 import * as actions from '../actions';
 
 class Header extends Component {
+	componentWillMount() {
+
+	};
+
 	renderContent() {
 		switch(this.props.auth) {
 			case null:
