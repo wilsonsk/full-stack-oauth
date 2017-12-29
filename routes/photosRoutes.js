@@ -7,6 +7,6 @@ module.exports = app => {
 		res.send(photos);
 	});
 	app.post('/api/photos/:photoURI', async (req, res) => {
-		const photo = await new Photo({ photoURI: req.params.photoURI }).save();
+		const photo = await new Photo({ uri: req.params.photoURI }).save();
 	});
 };
