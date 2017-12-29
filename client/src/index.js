@@ -15,5 +15,4 @@ ReactDOM.render(
 	document.getElementById('root')
 );
 
-console.log(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
 console.log("Environment: " + process.env.NODE_ENV);
