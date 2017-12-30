@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 const Photo = mongoose.model('photos');
-const redis = require('redis');
-const redisClient = redis.createClient();
 
 module.exports = app => {
 	app.get('/api/photos', async (req, res) => {
