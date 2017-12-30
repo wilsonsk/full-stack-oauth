@@ -12,7 +12,7 @@ const keys = require('./config/keys');
 mongoose.connect(keys.mongoURI);
 
 const app = express();
-
+console.log(process.env.REDISTOGO_URL);
 // Test Redis To Go (Heroku)
 if (process.env.REDISTOGO_URL) {
 	var rtg   = require("url").parse(process.env.REDISTOGO_URL);
