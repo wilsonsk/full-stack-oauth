@@ -13,6 +13,15 @@ mongoose.connect(keys.mongoURI);
 
 const app = express();
 
+// Test Redis To Go (Heroku)
+if (process.env.REDISTOGO_URL) {
+	var rtg = require("url").parse(process.env.REDISTOGO_URL);
+	var redis = require('redis').createClient(rtg.port, rtg.hostname);
+} else {
+	const redis = require('redis').createClient();
+}
+// End Test
+
 app.use(
 	cookieSession({
 		maxAge: 30 * 24 * 60 * 60 * 1000,
