@@ -15,10 +15,12 @@ const app = express();
 
 // Test Redis To Go (Heroku)
 if (process.env.REDISTOGO_URL) {
-	var rtg = require("url").parse(process.env.REDISTOGO_URL);
-	var redis = require('redis').createClient(rtg.port, rtg.hostname);
+	var rtg   = require("url").parse(process.env.REDISTOGO_URL);
+	var redis = require("redis").createClient(rtg.port, rtg.hostname);
+	
+	redis.auth(rtg.auth.split(":")[1]);
 } else {
-	const redis = require('redis').createClient();
+    var redis = require("redis").createClient();
 }
 // End Test
 
