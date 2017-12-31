@@ -7,7 +7,6 @@ import * as actions from '../actions';
 class Landing extends Component {
 	componentWillMount() {
 		this.props.fetchPhotos();
-		console.log(this.props.photos);
 	};
 
 	render() {
@@ -28,6 +27,7 @@ class Landing extends Component {
 };
 
 function mapStateToProps(state) {
+	console.log("map state.photos: " + state.photos);
 	return { photos: state.photos };
 }
 

@@ -6,7 +6,8 @@ export default function(state={
 	}, action) {
 	switch(action.type) {
 		case FETCH_PHOTOS:
-			return state = {photos: action.payload || false};
+			//return state = {photos: action.payload || false};
+			return state = action.payload || false
 		case ADD_PHOTO:
 			return state = {...state, photos: action.payload}
 		default:
