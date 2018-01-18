@@ -6,9 +6,24 @@ import * as actions from '../actions';
 
 class Landing extends Component {
 	componentWillMount() {
-		this.props.fetchPhotos();
+		this.props.fetchPhotos();		
+	};
+	componentDidMount() {
+		window.addEventListener('scroll', this.handleScroll);
+		window.addEventListener('click', this.handleClick);
+	};
+	componentWillUnmount() {
+		window.removeEventListener('scroll', this.handleScroll);
 	};
 
+	handleScroll(e) {
+		console.log(e);
+	};
+
+	handleClick(e) {
+		console.log(e);
+	};
+		
 	render() {
 		return (
 			<div style={{ display: 'flex', border: 'solid', alignItems: 'center'}}>
@@ -27,7 +42,7 @@ class Landing extends Component {
 };
 
 function mapStateToProps(state) {
-	console.log("map state.photos: " + state.photos);
+	console.log("mapped state: " + JSON.stringify(state));
 	return { photos: state.photos };
 }
 

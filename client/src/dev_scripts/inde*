@@ -1,0 +1,41 @@
+(function (window) {
+  addOnload(window, function() {
+  var Grid = (function() {
+    var instance;
+    
+    function getInstance() {
+      // below line ensures only 1 instance is created
+      if(!instance) { 
+        instance = init();
+      } 
+      return instance;
+    }
+    
+    function init() {
+      function __GRID_MODE__(power) {
+        var _allElements = window.document.getElementsByTagName('*');
+        
+        switch(power) {
+          case 0: 
+            _allElements.removeClass('__GRID_MODE__');
+            break;
+          case 1:
+            _allElements.addClass('__GRID_MODE__');
+            break;
+        }
+      }
+      
+      return {
+        __GRID_MODE__: __GRID_MODE__
+      };
+    }
+    
+    return {
+      getInstance: getInstance
+    };
+    
+    })();
+    if(!window.Grid) window.Grid = Grid;
+  });  
+})(window);
+
