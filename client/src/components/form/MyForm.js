@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Button, Checkbox, Form } from 'semantic-ui-react'
 import { reduxForm, Field } from 'redux-form';
 
 import formFields from './formFields';
