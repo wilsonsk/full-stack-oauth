@@ -38,11 +38,11 @@ class Hero extends Component {
 						<div style={styles.header}>
 							<a style={styles.headerLogo} href="#"><img style={styles.headerLogoImg} src="https://i.imgur.com/Zqerj8H.png" /></a>
 							<ul style={styles.navbarHeaderMenu}>
-								<li style={styles.navbarHeaderMenuItem}><Link style={styles.navbarHeaderMenuItemLink} to={'/'} >Home</Link></li>
-								<li style={styles.navbarHeaderMenuItem}><a style={styles.navbarHeaderMenuItemLink} href="#">Features</a></li>
-								<li style={styles.navbarHeaderMenuItem}><a style={styles.navbarHeaderMenuItemLink} href="#">Download</a></li>
-								<li style={styles.navbarHeaderMenuItem}><a style={styles.navbarHeaderMenuItemLink} href="#">Blog</a></li>
-								<li style={styles.navbarHeaderMenuItem}><a style={styles.navbarHeaderMenuItemLink} href="#">Contact</a></li>
+								<li style={styles.navbarHeaderMenuItem}><Link style={styles.navbarHeaderMenuItemLink} to={'/'}>Home</Link></li>
+								<li style={styles.navbarHeaderMenuItem}><Link style={styles.navbarHeaderMenuItemLink} to={"#"}>Features</Link></li>
+								<li style={styles.navbarHeaderMenuItem}><Link  style={styles.navbarHeaderMenuItemLink} to={"#"}>Download</Link></li>
+								<li style={styles.navbarHeaderMenuItem}><Link style={styles.navbarHeaderMenuItemLink} to={"#"}>Blog</Link></li>
+								<li style={styles.navbarHeaderMenuItem}><Link style={styles.navbarHeaderMenuItemLink} to={"#"}>Contact</Link></li>
 							</ul>		
 						</div>
 						
