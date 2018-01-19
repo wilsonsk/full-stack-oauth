@@ -5,6 +5,7 @@ export * from './fetchPhotosAction';
 export * from './fetchUserAction';
 export * from './handleTokenAction';
 export * from './flippedActions';
+export * from './ctaTransformActions';
 
 export const addSendAmount = (amount) => {
 	console.log(amount);

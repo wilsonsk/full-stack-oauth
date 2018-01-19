@@ -1,5 +1,4 @@
 import { FETCH_PHOTOS } from '../actions/types';
-import { ADD_PHOTO } from '../actions/types';
 
 export default function(state={
 	photos: []	
@@ -10,8 +9,6 @@ export default function(state={
 				...state,
 				photos: action.payload || false
 			}
-		case ADD_PHOTO:
-			return state = {...state, photos: action.payload}
 		default:
 			return state;
 	}
