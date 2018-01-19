@@ -1,30 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import * as actions from '../actions';
 
 class Hero extends Component {
 	constructor() {
 		super();
-		this.state = {
-			flipped: 0,
-		};
 	}
 
 	CTAclickHandler() { 
-		if(!this.state.flipped) {
-			this.setState({
-				flipped: 1,
-				transform: 'rotate(180deg)',
-			});
+		var { flipped } = this.props.flipped,
+				flippedIndex = flipped.length-1;
+
+		alert(JSON.stringify(flipped[flippedIndex]));
+		alert(JSON.stringify(flipped));
+
+		if(!flipped[flippedIndex]) {
+			this.props.setFlipped(1);
 		} else { 
-			this.setState({
-				flipped: 0,
-				transform: 'rotate(0deg)',
-			});
+			this.props.setFlipped(0);
 		}
 	}
-
 
 	render() {
 		return (
@@ -35,7 +32,7 @@ class Hero extends Component {
 						<div style={styles.header}>
 							<a style={styles.headerLogo} href="#"><img style={styles.headerLogoImg} src="https://i.imgur.com/Zqerj8H.png" /></a>
 							<ul style={styles.navbarHeaderMenu}>
-								<li style={styles.navbarHeaderMenuItem}><a style={styles.navbarHeaderMenuItemLink} href="#">Home</a></li>
+								<li style={styles.navbarHeaderMenuItem}><Link style={styles.navbarHeaderMenuItemLink} to={'/'} >Home</Link></li>
 								<li style={styles.navbarHeaderMenuItem}><a style={styles.navbarHeaderMenuItemLink} href="#">Features</a></li>
 								<li style={styles.navbarHeaderMenuItem}><a style={styles.navbarHeaderMenuItemLink} href="#">Download</a></li>
 								<li style={styles.navbarHeaderMenuItem}><a style={styles.navbarHeaderMenuItemLink} href="#">Blog</a></li>
@@ -43,9 +40,10 @@ class Hero extends Component {
 							</ul>		
 						</div>
 						
-						<div onClick={this.CTAclickHandler.bind(this)} style={{...styles.cta, transform: this.state.transform}}>
-							HI
-						</div>
+						<div onClick={this.CTAclickHandler.bind(this)}>
+							CLICK ME TO TEST REDUX!
+						</div>		
+							
 					</div>		
 				</section>			
 			</div>
@@ -107,7 +105,7 @@ const styles = {
 
 function mapStateToProps(state) {
 	// destructuring an object as done below, returns an object with a property called state, and that property itself contains the state properties - it does NOT assign an state to an empty object
-	return { state };
+	return { flipped: state.flipped };
 }
 
 export default connect(mapStateToProps, actions)(Hero);

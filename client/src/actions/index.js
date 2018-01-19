@@ -4,6 +4,7 @@ import { FETCH_RECIPIENT_AMOUNT } from './types';
 export * from './fetchPhotosAction';
 export * from './fetchUserAction';
 export * from './handleTokenAction';
+export * from './flippedActions';
 
 export const addSendAmount = (amount) => {
 	console.log(amount);
