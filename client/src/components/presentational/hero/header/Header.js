@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Header = styled.div`
+const Header = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
