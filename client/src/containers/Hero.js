@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Radium from 'radium';
-
 
 import * as actions from '../actions';
+import styled, { keyframes } from 'styled-components';
 
 class Hero extends Component {
 	constructor() {
@@ -94,7 +93,7 @@ class Hero extends Component {
 							</div>
 							<img style={styles.iphoneHero, this.state.iphoneHeroOff} src="https://i.imgur.com/sOKU33v.png" id={"#iphone-hero-off"} />
 							<img style={styles.iphoneHero, this.state.iphoneHeroButton} src="https://i.imgur.com/48ksIm5.png" id={"#iphone-hero-button"} />
-							<img style={styles.iphoneHero, this.state.iphoneHeroButton} src="https://i.imgur.com/5sjS6pY.png" id={"#iphone-hero-on"} />
+							<img style={styles.iphoneHero, this.state.iphoneHeroOn} src="https://i.imgur.com/5sjS6pY.png" id={"#iphone-hero-on"} />
 						</div>
 					</div>		
 				</section>			
@@ -104,20 +103,20 @@ class Hero extends Component {
 }
 
 // @keyframes
-var iphoneOnAnimation = Radium.keyframes({
-	'from': { opacity: '0' },
-	'to': { opacity: '1' }
-});
-
-var fadeIn = Radium.keyframes({
-	'from': { opacity: '0' },
-	'to': { opacity: '1' }
-});
-
-var slideUp = Radium.keyframes({
-	'from': { transform: 'translateY(1000px)' },
-	'to': { transform: 'translateY()' }
-});
+//var iphoneOn = Radium.keyframes({
+//	'from': { opacity: '0' },
+//	'to': { opacity: '1' }
+//}, 'iphoneOn');
+//
+//var fadeIn = Radium.keyframes({
+//	'from': { opacity: '0' },
+//	'to': { opacity: '1' }
+//}, 'fadeIn');
+//
+//var slideUp = Radium.keyframes({
+//	'from': { transform: 'translateY(1000px)' },
+//	'to': { transform: 'translateY()' }
+//}, 'slideUp');
 
 const styles = {
 	hero: {
@@ -216,12 +215,16 @@ const styles = {
 
 	},
 	iphoneHeroOff_animated: {
-		animation: 'slideUp 3s ease-out forwards, fadeIn 1.5s forward',
+		animationName: [slideUp, fadeIn],
+		animationDuration: '3s, 1.5s',
+		animationTimingFunction: 'ease-out',
+		animationFillMode: 'forwards, forwards',
 		gridRow: '1',
 		gridColumn: '2',
 	},
 	iphoneHeroButton_animated: {
-		animation: 'slideUp 3s ease-out forwards, fadeIn 1.5s forwards',
+		animation: 'x 3s ease-out forwards, x 1.5s forwards',
+		animationName: slideUp, fadeIn,
 		marginLeft: '55%',
 		width: '15%',
 		zIndex: '1',
@@ -235,7 +238,8 @@ const styles = {
 		zIndex: '1',
 		gridRow: '1',
 		gridColumn: '2',
-		animation: 'iphoneOn 3s ease-out 3s backwards',
+		animation: 'x 3s ease-out 3s backwards',
+		animationName: iphoneOn,
 	},
 };
 
@@ -243,7 +247,5 @@ function mapStateToProps(state) {
 	// destructuring an object as done below, returns an object with a property called state, and that property itself contains the state properties - it does NOT assign an state to an empty object
 	return { flipped: state.flipped, ctaTransform: state.ctaTransform };
 }
-
-Hero = Radium(Hero);
 
 export default connect(mapStateToProps, actions)(Hero);
