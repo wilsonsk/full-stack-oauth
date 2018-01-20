@@ -9,6 +9,8 @@ import { Hero, Container, Header, HeaderLogo, NavbarHeaderMenu, NavbarHeaderMenu
 
 import { Cta, CtaInfo, CtaHeadline, CtaValueProposition, CtaButton, IphoneIcon, IphoneHeroOff, IphoneHeroOn, IphoneHeroButton } from '../components/presentational/hero/cta';
 
+import { Features, FeaturesContent, FeaturesMainHeader, FeaturesMainPara, FeaturesContentRow, FeaturesContentCol, FeaturesContentHeader, FeaturesContentPara  } from '../components/presentational/hero/features';
+
 class Temp extends Component {
 	constructor(props) {
 		super();
@@ -74,53 +76,95 @@ class Temp extends Component {
 
 	render() {
 		return (
-			<Hero>
-				<Container>
-					<Header id="#hero">
-						<HeaderLogo href="#">
-							<img src="https://i.imgur.com/Zqerj8H.png" />
-						</HeaderLogo>
-						<NavbarHeaderMenu>		
-							<NavbarHeaderMenuItem>
-								<a>Home</a>
-							</NavbarHeaderMenuItem>
-							<NavbarHeaderMenuItem>
-								<a>Features</a>
-							</NavbarHeaderMenuItem>
-							<NavbarHeaderMenuItem>
-								<a>Downloads</a>
-							</NavbarHeaderMenuItem>
-							<NavbarHeaderMenuItem>
-								<a>Blog</a>
-							</NavbarHeaderMenuItem>
-							<NavbarHeaderMenuItem>
-								<a>Contact</a>
-							</NavbarHeaderMenuItem>
-						</NavbarHeaderMenu>
-					</Header>
+			<div>
+				<Hero>
+					<Container>
+						<Header id="#hero">
+							<HeaderLogo href="#">
+								<img src="https://i.imgur.com/Zqerj8H.png" />
+							</HeaderLogo>
+							<NavbarHeaderMenu>		
+								<NavbarHeaderMenuItem>
+									<a>Home</a>
+								</NavbarHeaderMenuItem>
+								<NavbarHeaderMenuItem>
+									<a>Features</a>
+								</NavbarHeaderMenuItem>
+								<NavbarHeaderMenuItem>
+									<a>Downloads</a>
+								</NavbarHeaderMenuItem>
+								<NavbarHeaderMenuItem>
+									<a>Blog</a>
+								</NavbarHeaderMenuItem>
+								<NavbarHeaderMenuItem>
+									<a>Contact</a>
+								</NavbarHeaderMenuItem>
+							</NavbarHeaderMenu>
+						</Header>
 
-					<Cta>
-						<CtaInfo>
-							<CtaHeadline>
-								Chocolate Passion Cake Modern  Sugar
-							</CtaHeadline>
-							<CtaValueProposition>
-								Fruitcake donut gummies. Candy liquorice biscuit. Sugar plum jelly gummi bears brownie toffee cupcake caramels brownie cookie.
-							</CtaValueProposition>
-							<CtaButton>
-								<IphoneIcon>
-									<img src="https://i.imgur.com/HlXhwuW.png" />
-								</IphoneIcon>											
-								<div>
-									Download on appstore
-								</div>
-							</CtaButton>
-						</CtaInfo>
-						{this.renderIphoneAnimation()}
-					</Cta>
-	
-				</Container>
-			</Hero>
+						<Cta>
+							<CtaInfo>
+								<CtaHeadline>
+									Chocolate Passion Cake Modern  Sugar
+								</CtaHeadline>
+								<CtaValueProposition>
+									Fruitcake donut gummies. Candy liquorice biscuit. Sugar plum jelly gummi bears brownie toffee cupcake caramels brownie cookie.
+								</CtaValueProposition>
+								<CtaButton>
+									<IphoneIcon>
+										<img src="https://i.imgur.com/HlXhwuW.png" />
+									</IphoneIcon>											
+									<div>
+										Download on appstore
+									</div>
+								</CtaButton>
+							</CtaInfo>
+							{this.renderIphoneAnimation()}
+						</Cta>
+					</Container>
+				</Hero>
+
+				<Features>
+					<FeaturesContent>
+						<FeaturesMainHeader>
+							App Features
+						</FeaturesMainHeader>
+						<FeaturesMainPara>
+							Donut sesame snaps donut pie dessert chupa chups wafer dragée. Gummies fruitcake chupa chups cookie liquorice. Chocolate pudding dessert jelly fruitcake tart jelly wafer. Sweet roll carrot cake croissant.			
+						</FeaturesMainPara>
+						<FeaturesContentRow>
+							<FeaturesContentCol>	
+								<img src="https://i.imgur.com/fCDgzsd.png" id="feature-img-1"/>
+								<FeaturesContentHeader>
+									Scalable
+								</FeaturesContentHeader>
+								<FeaturesContentPara>
+									Croissant ice cream macaroon cake. Dessert jelly beans candy cookie. Bear claw candy canes gingerbread caramels cake. Macaroon applicake gummi bears jelly marzipan.
+								</FeaturesContentPara>
+							</FeaturesContentCol>	
+							<FeaturesContentCol>	
+								<img src="https://i.imgur.com/OjjiYfy.png" id="feature-img-2" />
+								<FeaturesContentHeader>
+									Instant
+								</FeaturesContentHeader>
+								<FeaturesContentPara>
+									Croissant ice cream macaroon cake. Dessert jelly beans candy cookie. Bear claw candy canes gingerbread caramels cake. Macaroon applicake gummi bears jelly marzipan.
+								</FeaturesContentPara>
+
+							</FeaturesContentCol>	
+							<FeaturesContentCol>	
+								<img src="https://i.imgur.com/7lnBcrt.png" id="feature-img-3" />
+								<FeaturesContentHeader>
+									Something
+								</FeaturesContentHeader>
+								<FeaturesContentPara>
+									Croissant ice cream macaroon cake. Dessert jelly beans candy cookie. Bear claw candy canes gingerbread caramels cake. Macaroon applicake gummi bears jelly marzipan.
+								</FeaturesContentPara>
+							</FeaturesContentCol>	
+						</FeaturesContentRow>
+					</FeaturesContent>
+				</Features>
+			</div>	
 		);
 	}
 }
