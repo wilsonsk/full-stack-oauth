@@ -7,46 +7,68 @@ import styled, { keyframes } from 'styled-components';
 
 import { Hero, Container, Header, HeaderLogo, NavbarHeaderMenu, NavbarHeaderMenuItem } from '../components/presentational/hero/header';
 
-import { Cta, CtaInfo, CtaHeadline, CtaValueProposition, CtaButton, IphoneButton, IphoneIcon, IphoneHeroOff, IphoneHeroOn, IphoneHeroButton } from '../components/presentational/hero/cta';
+import { Cta, CtaInfo, CtaHeadline, CtaValueProposition, CtaButton, IphoneIcon, IphoneHeroOff, IphoneHeroOn, IphoneHeroButton } from '../components/presentational/hero/cta';
 
 class Temp extends Component {
 	constructor(props) {
 		super();
 		this.state = {
-			iphoneAnimations: 1,
+			iphoneAnimations: 0,
 		}
+	}
+
+	componentDidMount() {
+		window.addEventListener('scroll', this.handleScrollHero.bind(this));
+	}
+
+	handleScrollHero(e) {
+		var windowScrollTop = window.scrollY,
+	       	    // HERO SECTION VARS
+		    hero = window.document.getElementById('#hero'),
+		    heroHeight = hero.getBoundingClientRect().height,
+		    heroOffset = hero.getBoundingClientRect().top,
+		    iphoneHeroOn = window.document.getElementById('#iphone-hero-on'),
+		    iphoneHeroOff = window.document.getElementById('#iphone-hero-off'),
+		    iphoneHeroButton = window.document.getElementById('#iphone-hero-button'),
+		    powerOn=false;
+
+		      // HERO SHOT ANIMATIONS 
+		if(windowScrollTop > heroOffset) {
+			this.setState({
+				iphoneAnimations: 1,
+			});
+		}		
 	}
 
 	renderIphoneAnimation() {
 		if(this.state.iphoneAnimations){
 			return(
-				<div>
-					<IphoneHeroOff iphoneOn_animation={this.state.iphoneOn_animation}>
+				<div style={{position: 'relative'}}>
+					<IphoneHeroOff id="#iphone-hero-off" zIndex="" opacity="1" gridRow="1" gridColumn="2" animation1="3s ease-out forwards" animation2="1.5s forwards">
 						<img src="https://i.imgur.com/sOKU33v.png" />
 					</IphoneHeroOff>
-					<IphoneHeroOn marginTop="23%" paddingRight="20%" paddingLeft="16%" zIndex="1" gridRow="1" gridColumn="2" animation="${iphoneOn} 3s ease-out 3s backwards">
-						<img src="https://i.imgur.com/5sjS6pY.png" />
-					</IphoneHeroOn>
-					<IphoneHeroButton iphoneButton_animation={this.state.iphoneButton_animation}>
+					<IphoneHeroButton id="#iphone-hero-button" marginLeft="72%" width="15%" zIndex="1" gridRow="1" gridColumn="2" opacity="1" animation1="3s ease-out forwards" animation2="1.5s forwards">
 						<img src="https://i.imgur.com/48ksIm5.png" />
 					</IphoneHeroButton>
+					<IphoneHeroOn id="#iphone-hero-on" marginTop="70%" paddingLeft="20%" zIndex="1" gridRow="1" gridColumn="2" animation="3s ease-out 3s backwards" opacity="1">
+						<img src="https://i.imgur.com/5sjS6pY.png" />
+					</IphoneHeroOn>
 				</div>
 			);
 		} else {
-			return(
-				<div>
-					<IphoneHeroOff>
+			return (
+				<div style={{position: 'relative'}}>
+					<IphoneHeroOff id="#iphone-hero-off" opacity="0">
 						<img src="https://i.imgur.com/sOKU33v.png" />
 					</IphoneHeroOff>
-					<IphoneHeroOn>
-						<img src="https://i.imgur.com/5sjS6pY.png" />
-					</IphoneHeroOn>
-					<IphoneHeroButton>
+					<IphoneHeroButton id="#iphone-hero-button" opacity="0">
 						<img src="https://i.imgur.com/48ksIm5.png" />
 					</IphoneHeroButton>
+					<IphoneHeroOn id="#iphone-hero-on" opacity="0">
+						<img src="https://i.imgur.com/5sjS6pY.png" />
+					</IphoneHeroOn>
 				</div>
 			);
-
 		}
 	}
 
@@ -54,7 +76,7 @@ class Temp extends Component {
 		return (
 			<Hero>
 				<Container>
-					<Header>
+					<Header id="#hero">
 						<HeaderLogo href="#">
 							<img src="https://i.imgur.com/Zqerj8H.png" />
 						</HeaderLogo>
@@ -88,8 +110,10 @@ class Temp extends Component {
 							<CtaButton>
 								<IphoneIcon>
 									<img src="https://i.imgur.com/HlXhwuW.png" />
-										Download on appstore
-								</IphoneIcon>
+								</IphoneIcon>											
+								<div>
+									Download on appstore
+								</div>
 							</CtaButton>
 						</CtaInfo>
 						{this.renderIphoneAnimation()}

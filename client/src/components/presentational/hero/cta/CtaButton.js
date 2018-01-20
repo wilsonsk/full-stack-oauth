@@ -1,13 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const CtaButton = styled.a`
-  font-size: 36px;
-  line-height: 40px;
-  font-family: 'Open Sans Condensed', sans-serif;
+const CtaButton = styled.div`
+  padding: 5% 5%;
+  background: #282828;
   color: white;
-  margin-bottom: 55px;
-  width: 95%;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 28px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  &:hover {
+    background: #383737;
+    transition: 0.3s;
+  }
 `;
 
 export { CtaButton };
