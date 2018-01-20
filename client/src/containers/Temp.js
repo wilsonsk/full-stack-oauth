@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 import * as actions from '../actions';
 import styled, { keyframes } from 'styled-components';
 
-import { Hero, Container } from '../components/presentational';
+import { Hero, Container, Header, HeaderLogo, NavbarHeaderMenu, NavbarHeaderMenuItem } from '../components/presentational/hero/header';
+
+import { CTA } from '../components/presentational/hero/cta';
 
 class Temp extends Component {
 	constructor() {
@@ -16,7 +18,53 @@ class Temp extends Component {
 		return (
 			<Hero>
 				<Container>
-					HI WORLD
+					<Header>
+						<HeaderLogo href="#">
+							<img src="https://i.imgur.com/Zqerj8H.png" />
+						</HeaderLogo>
+						<NavbarHeaderMenu>		
+							<NavbarHeaderMenuItem>
+								<a>Home</a>
+							</NavbarHeaderMenuItem>
+							<NavbarHeaderMenuItem>
+								<a>Features</a>
+							</NavbarHeaderMenuItem>
+							<NavbarHeaderMenuItem>
+								<a>Downloads</a>
+							</NavbarHeaderMenuItem>
+							<NavbarHeaderMenuItem>
+								<a>Blog</a>
+							</NavbarHeaderMenuItem>
+							<NavbarHeaderMenuItem>
+								<a>Contact</a>
+							</NavbarHeaderMenuItem>
+						</NavbarHeaderMenu>
+					</Header>
+
+					<Cta>
+						<CtaInfo>
+							<CtaHeadline>
+
+							</CtaHeadline>
+							<CtaValueProposition>
+
+							</CtaValueProposition>
+							<CtaButton>
+								<IphoneIcon>
+									<img src="https://i.imgur.com/HlXhwuW.png" style={styles.iphoneIcon} />
+										Download on appstore
+								</IphoneIcon>
+							</CtaButton>
+
+						</CtaInfo>
+						<IphoneHeroOff src="https://i.imgur.com/sOKU33v.png">
+						</IphoneHeroOff>
+						<IphoneHeroOn src="https://i.imgur.com/48ksIm5.png">
+						</IphoneHeroOn>
+						<IphoneHeroButton src="https://i.imgur.com/5sjS6pY.png">
+						</IphoneHeroButton>
+					</Cta>
+
 				</Container>
 			</Hero>
 		);
