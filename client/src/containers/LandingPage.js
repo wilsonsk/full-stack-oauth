@@ -3,20 +3,24 @@ import { connect } from 'react-redux';
 
 import * as actions from '../actions';
 
-import Hero from './Hero';
+import HeroSection from './HeroSection';
+import FeaturesSection from './FeaturesSection';
+import Cta2Section from './Cta2Section';
 
 class LandingPage extends Component {
+	componentDidMount() {
+		this.props.fetchUser();
+	}
 
 	render() {
-		return (
-			<Hero />
-		);
+	    return (
+		    <div>
+			<HeroSection />
+		    	<FeaturesSection />
+		    	<Cta2Section />
+		    </div>
+	    );
 	}
 }
 
-function mapStateToProps(state) {
-	// destructuring an object as done below, returns an object with a property called state, and that property itself contains the state properties - it does NOT assign an state to an empty object
-	return { state };
-}
-
-export default connect(mapStateToProps, actions)(LandingPage);
+export default connect(null, actions)(LandingPage);

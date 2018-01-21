@@ -4,9 +4,7 @@ import { connect } from 'react-redux';
 
 import * as actions from '../actions';
 
-import Temp from './Temp';
-
-//can add className='container' for responsive, semantic-ui layout, else use native
+import LandingPage from './LandingPage';
 
 const styles = {
 	fontMontserrat: {
@@ -24,7 +22,7 @@ class App extends Component {
 	    return (
 		<BrowserRouter>
 			<div style={styles.fontMontserrat}>
-				<Route path="/" component={Temp} />
+				<Route path="/" component={LandingPage} />
 			</div>
 		</BrowserRouter>
 	    );
