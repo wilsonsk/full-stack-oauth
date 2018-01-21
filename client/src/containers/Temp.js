@@ -9,18 +9,20 @@ import { Hero, Container, Header, HeaderLogo, NavbarHeaderMenu, NavbarHeaderMenu
 
 import { Cta, CtaInfo, CtaHeadline, CtaValueProposition, CtaButton, IphoneIcon, IphoneHeroOff, IphoneHeroOn, IphoneHeroButton } from '../components/presentational/hero/cta';
 
-import { Features, FeaturesContent, FeaturesMainHeader, FeaturesMainPara, FeaturesContentRow, FeaturesContentCol, FeaturesContentHeader, FeaturesContentPara  } from '../components/presentational/hero/features';
+import { Features, FeaturesContent, FeaturesMainHeader, FeaturesMainPara, FeaturesContentRow, FeaturesContentCol, FeaturesContentColA, FeaturesContentColB, FeaturesContentColC, FeaturesContentHeader, FeaturesContentPara  } from '../components/presentational/hero/features';
 
 class Temp extends Component {
 	constructor(props) {
 		super();
 		this.state = {
-			iphoneAnimations: 0,
+			iphoneAnimations: null,
+			featuresAnimations: null,
 		}
 	}
 
 	componentDidMount() {
 		window.addEventListener('scroll', this.handleScrollHero.bind(this));
+		window.addEventListener('scroll', this.handleScrollFeatures.bind(this));
 	}
 
 	handleScrollHero(e) {
@@ -29,9 +31,6 @@ class Temp extends Component {
 		    hero = window.document.getElementById('#hero'),
 		    heroHeight = hero.getBoundingClientRect().height,
 		    heroOffset = hero.getBoundingClientRect().top,
-		    iphoneHeroOn = window.document.getElementById('#iphone-hero-on'),
-		    iphoneHeroOff = window.document.getElementById('#iphone-hero-off'),
-		    iphoneHeroButton = window.document.getElementById('#iphone-hero-button'),
 		    powerOn=false;
 
 		      // HERO SHOT ANIMATIONS 
@@ -42,36 +41,20 @@ class Temp extends Component {
 		}		
 	}
 
-	renderIphoneAnimation() {
-		if(this.state.iphoneAnimations){
-			return(
-				<div style={{position: 'relative'}}>
-					<IphoneHeroOff id="#iphone-hero-off" zIndex="" opacity="1" gridRow="1" gridColumn="2" animation1="3s ease-out forwards" animation2="1.5s forwards">
-						<img src="https://i.imgur.com/sOKU33v.png" />
-					</IphoneHeroOff>
-					<IphoneHeroButton id="#iphone-hero-button" marginLeft="72%" width="15%" zIndex="1" gridRow="1" gridColumn="2" opacity="1" animation1="3s ease-out forwards" animation2="1.5s forwards">
-						<img src="https://i.imgur.com/48ksIm5.png" />
-					</IphoneHeroButton>
-					<IphoneHeroOn id="#iphone-hero-on" marginTop="70%" paddingLeft="20%" zIndex="1" gridRow="1" gridColumn="2" animation="3s ease-out 3s backwards" opacity="1">
-						<img src="https://i.imgur.com/5sjS6pY.png" />
-					</IphoneHeroOn>
-				</div>
-			);
-		} else {
-			return (
-				<div style={{position: 'relative'}}>
-					<IphoneHeroOff id="#iphone-hero-off" opacity="0">
-						<img src="https://i.imgur.com/sOKU33v.png" />
-					</IphoneHeroOff>
-					<IphoneHeroButton id="#iphone-hero-button" opacity="0">
-						<img src="https://i.imgur.com/48ksIm5.png" />
-					</IphoneHeroButton>
-					<IphoneHeroOn id="#iphone-hero-on" opacity="0">
-						<img src="https://i.imgur.com/5sjS6pY.png" />
-					</IphoneHeroOn>
-				</div>
-			);
-		}
+	handleScrollFeatures(e) {
+		var windowScrollTop = window.scrollY,
+	       	    // HERO SECTION VARS
+		    features = window.document.getElementById('#features'),
+		    featuresHeight = features.getBoundingClientRect().height,
+		    featuresOffset = features.getBoundingClientRect().top;
+
+		      // FEATURES SECTION ANIMATIONS 
+		if(windowScrollTop > featuresOffset) {
+			this.setState({
+				featuresAnimations: 1,
+			});
+		}		
+
 	}
 
 	render() {
@@ -119,12 +102,21 @@ class Temp extends Component {
 									</div>
 								</CtaButton>
 							</CtaInfo>
-							{this.renderIphoneAnimation()}
+							<IphoneHeroOff id="#iphone-hero-off" animated={this.state.iphoneAnimations}>
+								<img src="https://i.imgur.com/sOKU33v.png" />
+							</IphoneHeroOff>
+							<IphoneHeroButton id="#iphone-hero-button" animated={this.state.iphoneAnimations}>
+								<img src="https://i.imgur.com/48ksIm5.png" />
+							</IphoneHeroButton>
+							<IphoneHeroOn id="#iphone-hero-on" animated={this.state.iphoneAnimations}>
+								<img src="https://i.imgur.com/5sjS6pY.png" />
+							</IphoneHeroOn>
+
 						</Cta>
 					</Container>
 				</Hero>
 
-				<Features>
+				<Features id="#features">
 					<FeaturesContent>
 						<FeaturesMainHeader>
 							App Features
@@ -134,32 +126,37 @@ class Temp extends Component {
 						</FeaturesMainPara>
 						<FeaturesContentRow>
 							<FeaturesContentCol>	
-								<img src="https://i.imgur.com/fCDgzsd.png" id="feature-img-1"/>
-								<FeaturesContentHeader>
-									Scalable
-								</FeaturesContentHeader>
-								<FeaturesContentPara>
-									Croissant ice cream macaroon cake. Dessert jelly beans candy cookie. Bear claw candy canes gingerbread caramels cake. Macaroon applicake gummi bears jelly marzipan.
-								</FeaturesContentPara>
+								<FeaturesContentColA id="#features-content-col-a" animated={this.state.featuresAnimations}>
+									<img src="https://i.imgur.com/fCDgzsd.png" id="feature-img-1"/>	
+									<FeaturesContentHeader>
+										Scalable
+									</FeaturesContentHeader>
+									<FeaturesContentPara>
+										Croissant ice cream macaroon cake. Dessert jelly beans candy cookie. Bear claw candy canes gingerbread caramels cake. Macaroon applicake gummi bears jelly marzipan.
+									</FeaturesContentPara>
+								</FeaturesContentColA>
 							</FeaturesContentCol>	
 							<FeaturesContentCol>	
-								<img src="https://i.imgur.com/OjjiYfy.png" id="feature-img-2" />
-								<FeaturesContentHeader>
-									Instant
-								</FeaturesContentHeader>
-								<FeaturesContentPara>
-									Croissant ice cream macaroon cake. Dessert jelly beans candy cookie. Bear claw candy canes gingerbread caramels cake. Macaroon applicake gummi bears jelly marzipan.
-								</FeaturesContentPara>
-
+								<FeaturesContentColB id="#features-content-col-b" animated={this.state.featuresAnimations}>
+									<img src="https://i.imgur.com/OjjiYfy.png" id="feature-img-2" />
+									<FeaturesContentHeader>
+										Instant
+									</FeaturesContentHeader>
+									<FeaturesContentPara>
+										Croissant ice cream macaroon cake. Dessert jelly beans candy cookie. Bear claw candy canes gingerbread caramels cake. Macaroon applicake gummi bears jelly marzipan.
+									</FeaturesContentPara>
+								</FeaturesContentColB>
 							</FeaturesContentCol>	
 							<FeaturesContentCol>	
-								<img src="https://i.imgur.com/7lnBcrt.png" id="feature-img-3" />
-								<FeaturesContentHeader>
-									Something
-								</FeaturesContentHeader>
-								<FeaturesContentPara>
-									Croissant ice cream macaroon cake. Dessert jelly beans candy cookie. Bear claw candy canes gingerbread caramels cake. Macaroon applicake gummi bears jelly marzipan.
-								</FeaturesContentPara>
+								<FeaturesContentColC id="#features-content-col-c" animated={this.state.featuresAnimations}>
+									<img src="https://i.imgur.com/7lnBcrt.png" id="feature-img-3" />
+									<FeaturesContentHeader>
+										Something
+									</FeaturesContentHeader>
+									<FeaturesContentPara>
+										Croissant ice cream macaroon cake. Dessert jelly beans candy cookie. Bear claw candy canes gingerbread caramels cake. Macaroon applicake gummi bears jelly marzipan.
+									</FeaturesContentPara>
+								</FeaturesContentColC>
 							</FeaturesContentCol>	
 						</FeaturesContentRow>
 					</FeaturesContent>

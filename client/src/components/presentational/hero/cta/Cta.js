@@ -6,6 +6,7 @@ const Cta = styled.section`
   display: grid;
   grid-template-columns: 1.618fr auto;
   transition: 'background-color 5s';
+  position: relative;
 `;
 
 export { Cta };

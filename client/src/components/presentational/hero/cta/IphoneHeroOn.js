@@ -10,15 +10,21 @@ const iphoneOn = keyframes`
 const IphoneHeroOn = styled.div`
   margin-bottom: -240px;
   width: 100%;
-  opacity: ${props => props.opacity};
   position: relative;
 
-  margin-top: ${props => props.marginTop};
-  padding-left:  ${props => props.paddingLeft};
-  z-index: ${props => props.zIndex};
-  grid-row: ${props => props.gridRow};
-  grid-column: ${props => props.gridColumn};
-  animation: ${iphoneOn} ${props => props.animation};
+  opacity: 0;
+  margin-top: ${props => props.animated ? '16%' : ''};
+  padding-left:  ${props => props.animated ? '20%' : ''};
+  z-index: ${props => props.animated ? '1' : ''};
+  grid-row: ${props => props.animated ? '1' : ''};
+  grid-column: ${props => props.animated ? '2' : ''};
+  animation: ${props => props.animated ? `
+	  	${iphoneOn} 3s ease-out 3s forwards`
+		: ''};
+  @media (max-width: 300px) {
+    margin-top: ${props => props.animated ? '0%' : ''};
+  }
+
 `;
 
 export { IphoneHeroOn };

@@ -13,13 +13,15 @@ const slideUp = keyframes`
 
 const IphoneHeroOff = styled.div`
   position: absolute;
-  z-index: ${props => props.zIndex};
-  opacity: ${props => props.opacity};
+  opacity: ${props => props.animated ? '1' : '0'};
   margin-bottom: -240px;
   width: 100%;
-  animation: ${slideUp} ${props => props.animation1}, ${fadeIn} ${props => props.animation2};
-  grid-row: ${props => props.gridRow};
-  grid-column: ${props => props.gridColumn};
+  animation: ${props => props.animated ? `
+		${slideUp} 3s ease-out forwards, 
+		${fadeIn} 1.5s forwards`
+		: ''};
+  grid-row: ${props => props.animated ? '1' : ''};
+  grid-column: ${props => props.animated ? '2' : ''};
 `;
 
 export { IphoneHeroOff };

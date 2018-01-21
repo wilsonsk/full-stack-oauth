@@ -5,5 +5,8 @@ export * from './FeaturesMainPara';
 
 export * from './FeaturesContentRow'
 export * from './FeaturesContentCol';
+export * from './FeaturesContentColA';
+export * from './FeaturesContentColB';
+export * from './FeaturesContentColC';
 export * from './FeaturesContentHeader';
 export * from './FeaturesContentPara';

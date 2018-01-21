@@ -12,18 +12,21 @@ const slideUp = keyframes`
 `;
 
 const IphoneHeroButton = styled.div`
-  opacity: ${props => props.opacity};
   margin-bottom: -240px;
   width: 100%;
+  position: relative;
 
-  margin-top: ${props => props.marginTop};
-  margin-left: ${props => props.marginLeft};
-  width: ${props => props.width};
-  z-index: ${props => props.zIndex};
-  grid-row: ${props => props.gridRow};
-  grid-column: ${props => props.gridColumn};
+  opacity: ${props => props.animated ? '1' : '0'};
+  margin-top: ${props => props.animated  ? '' : ''};
+  margin-left: ${props => props.animated  ? '72%' : ''};
+  width: ${props => props.animated ? '15%' : ''};
+  grid-row: ${props => props.animated ? '1' : ''};
+  grid-column: ${props => props.animated ? '2' : ''};
 
-  animation: ${slideUp} ${props => props.animation1}, ${fadeIn} ${props => props.animation2};
+  animation: ${props => props.animated ? `
+		${slideUp} 3s ease-out forwards, 
+		${fadeIn} 1.5s forwards`
+	  	: ''};
 `;
 
 export { IphoneHeroButton };
