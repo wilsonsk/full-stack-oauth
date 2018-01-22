@@ -12,6 +12,7 @@ const fadeIn = keyframes`
 `;
 
 const FeaturesContentColB = styled.div`
+  opacity: 0;
   animation: ${props => props.animated ? `
 		${slideUp} 2s linear,
 		${fadeIn} 1s forwards linear`

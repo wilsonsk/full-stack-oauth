@@ -12,6 +12,7 @@ const fadeIn = keyframes`
 `;
 
 const Cta2Column = styled.div`
+  opacity: 0;
   display: grid;
   grid-template-rows: auto auto auto;
   animation: ${props => props.animated ? `

@@ -12,6 +12,7 @@ const slideLeft = keyframes`
 `;
 
 const FeaturesContentColC = styled.div`
+  opacity: 0;
   animation: ${props => props.animated ? `
 		${slideLeft} 2s linear, 
 		${fadeIn} 1s forwards linear`
