@@ -27,7 +27,7 @@ class FooterSection extends Component {
 		    footerOffset = footer.getBoundingClientRect().top;
 
 		      // FEATURES SECTION ANIMATIONS 
-		if(windowScrollTop > footerOffset) {
+		if(windowScrollTop > footerHeight/3) {
 			this.setState({
 				footerAnimations: 1,
 			});
