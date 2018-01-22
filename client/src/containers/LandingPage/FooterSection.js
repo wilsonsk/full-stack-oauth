@@ -24,13 +24,12 @@ class FooterSection extends Component {
 	       	    // HERO SECTION VARS
 		    footer = window.document.getElementById('#footer'),
 		    footerHeight = footer.getBoundingClientRect().height,
-		    footerOffset = footer.getBoundingClientRect().top,
-		    tempOffset = 600;
+		    footerOffset = footer.getBoundingClientRect().top;
 	
 		console.log("window: " + windowScrollTop)
-		console.log(windowScrollTop-footerHeight+footerOffset + tempOffset)
+		console.log(windowScrollTop-footerHeight+footerOffset)
 		      // FEATURES SECTION ANIMATIONS 
-		if(windowScrollTop > (windowScrollTop - footerHeight + footerOffset + tempOffset)) {
+		if(windowScrollTop > (windowScrollTop - footerHeight + footerOffset)) {
 			this.setState({
 				footerAnimations: 1,
 			});
