@@ -27,7 +27,7 @@ class FeaturesSection extends Component {
 		    featuresOffset = features.getBoundingClientRect().top;
 
 		      // FEATURES SECTION ANIMATIONS 
-		if(windowScrollTop > featuresOffset) {
+		if(windowScrollTop > featuresOffset + featuresHeight) {
 			this.setState({
 				featuresAnimations: 1,
 			});

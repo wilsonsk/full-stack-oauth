@@ -27,7 +27,7 @@ class Cta2Section extends Component {
 		    cta2Offset = cta2.getBoundingClientRect().top;
 
 		      // FEATURES SECTION ANIMATIONS 
-		if(windowScrollTop > cta2Offset) {
+		if(windowScrollTop > cta2Offset + cta2Height) {
 			this.setState({
 				cta2Animations: 1,
 			});

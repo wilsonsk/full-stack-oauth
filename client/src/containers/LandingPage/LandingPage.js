@@ -6,6 +6,7 @@ import * as actions from '../../actions';
 import HeroSection from './HeroSection';
 import FeaturesSection from './FeaturesSection';
 import Cta2Section from './Cta2Section';
+import FooterSection from './FooterSection';
 
 class LandingPage extends Component {
 	componentDidMount() {
@@ -18,6 +19,7 @@ class LandingPage extends Component {
 			<HeroSection />
 		    	<FeaturesSection />
 		    	<Cta2Section />
+		    	<FooterSection />
 		    </div>
 	    );
 	}
