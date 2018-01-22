@@ -15,7 +15,7 @@ const IphoneHeroOff = styled.div`
   position: absolute;
   opacity: ${props => props.animated ? '1' : '0'};
   margin-bottom: -240px;
-  margin-right: 10%;
+  padding-right: 10%;
   width: 100%;
   animation: ${props => props.animated ? `
 		${slideUp} 3s ease-out forwards, 
