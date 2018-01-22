@@ -12,6 +12,7 @@ const fadeIn = keyframes`
 `;
 
 const FooterContentColumnA = styled.div`
+  opacity: 0;
   align-content: start;
   margin-top: 77px;
   display: grid;

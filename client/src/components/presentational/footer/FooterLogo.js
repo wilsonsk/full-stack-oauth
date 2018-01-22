@@ -12,6 +12,7 @@ const fadeIn = keyframes`
 `;
 
 const FooterLogo = styled.div`
+  opacity: 0;
   animation: ${props => props.animated ? `
 	  	${slideDown} 1s both, 
 		${fadeIn} 4s forwards`
