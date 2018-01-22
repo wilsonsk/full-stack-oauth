@@ -14,7 +14,7 @@ const IphoneHeroOn = styled.div`
 
   opacity: 0;
   margin-top: ${props => props.animated ? '30%' : ''};
-  padding-left:  ${props => props.animated ? '21%' : ''};
+  padding-left:  ${props => props.animated ? '20%' : ''};
   z-index: ${props => props.animated ? '1' : ''};
   grid-row: ${props => props.animated ? '1' : ''};
   grid-column: ${props => props.animated ? '2' : ''};
