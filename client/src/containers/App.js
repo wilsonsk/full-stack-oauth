@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import * as actions from '../actions';
 
-import LandingPage from './LandingPage';
+import LandingPage from './LandingPage/LandingPage';
 
 const styles = {
 	fontMontserrat: {

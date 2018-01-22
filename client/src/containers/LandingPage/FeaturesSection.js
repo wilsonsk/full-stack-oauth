@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import * as actions from '../actions';
+import * as actions from '../../actions';
 import styled, { keyframes } from 'styled-components';
 
-import { Features, FeaturesContent, FeaturesMainHeader, FeaturesMainPara, FeaturesContentRow, FeaturesContentCol, FeaturesContentColA, FeaturesContentColB, FeaturesContentColC, FeaturesContentHeader, FeaturesContentPara  } from '../components/presentational/features';
+import { Features, FeaturesContent, FeaturesMainHeader, FeaturesMainPara, FeaturesContentRow, FeaturesContentCol, FeaturesContentColA, FeaturesContentColB, FeaturesContentColC, FeaturesContentHeader, FeaturesContentPara  } from '../../components/presentational/features';
 
 class FeaturesSection extends Component {
 	constructor(props) {

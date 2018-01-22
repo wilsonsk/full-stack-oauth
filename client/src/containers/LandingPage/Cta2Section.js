@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import * as actions from '../actions';
+import * as actions from '../../actions';
 import styled, { keyframes } from 'styled-components';
+
+import { Cta2, Container, Cta2Content, Cta2Column, Cta2Header, Cta2ParaRedText, Cta2Para, Cta2Button, DogHero } from '../../components/presentational/cta2';
 
 class Cta2Section extends Component {
 	constructor(props) {
@@ -35,8 +37,26 @@ class Cta2Section extends Component {
 
 	render() {
 		return (
-			<div>
-			</div>
+			<Cta2 id="#cta-2">
+				<Container>
+					<Cta2Content>
+						<Cta2Column animated={this.state.cta2Animations}>
+							<Cta2Header>
+								<Cta2ParaRedText>Chocolate</Cta2ParaRedText> pudding dessert jelly <Cta2ParaRedText>fruit cake tart jelly wafer.</Cta2ParaRedText>
+							</Cta2Header>
+							<Cta2Para>
+								Donut cupcake lemon drops dragée liquorice apple pie powder. Topping sweet lollipop soufflé chocolate liquorice candy canes.
+							</Cta2Para>
+							<Cta2Button>
+								Download
+							</Cta2Button>
+						</Cta2Column>
+						<DogHero>
+							          <img src="https://i.imgur.com/Da6cUxG.png" id="dog-hero" />
+						</DogHero>
+					</Cta2Content>
+				</Container>
+			</Cta2>
 			);
 	}
 }
