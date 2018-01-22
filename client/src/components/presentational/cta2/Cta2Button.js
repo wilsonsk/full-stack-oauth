@@ -9,6 +9,7 @@ const Cta2Button = styled.div`
   border-radius: 50px;
   padding: 4% 4%;
   width: 65%;
+  text-align: center;
 `;
 
 export { Cta2Button };
