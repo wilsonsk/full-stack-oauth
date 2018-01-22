@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const NavbarHeaderMenu = styled.ul`
   display: grid;
   grid-template-columns: repeat(5, auto);
+  grid-template-rows: minmax(75px, auto);
   list-style-type: none;
   grid-gap: 5%;
 
