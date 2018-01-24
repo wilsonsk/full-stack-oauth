@@ -17,6 +17,15 @@ const MainGrid = styled.section`
 	"Header Header Hero Hero Hero Cta Cta"
 	"Header Header Hero Hero Hero Cta Cta"
 	"ValueProp ValueProp Hero Hero Hero Cta2 Cta2";
+
+  @media(max-width: 768px) {
+	  grid-template-columns: 1fr 1fr 1fr;
+	  grid-template-rows: repeat(2, auto);
+	  grid-template-areas: 
+		"Header Hero Cta"
+		"ValuePropi Hero Cta2";
+  }
+
   > * {
     border: solid black 1px;
   }
