@@ -1,10 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Header = styled.div`
-  grid-area: Header;
-  display: grid;
-  grid-template-columns: [start] 1fr [mid] minmax(auto, 1fr) [end];
+const CtaHeader = styled.div`
+  grid-area: Cta;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 12px;
+  justify-self: end;
+
+  grid-template-columns: [start] minmax(auto, 1fr) [mid] 1fr [end];
   grid-template-rows: auto;
 
   @media(max-width: 768px) {
@@ -14,8 +17,7 @@ const Header = styled.div`
 
   > * {
     border: solid black 1px;
-  }
 `;
 
 
-export { Header };
+export { CtaHeader };

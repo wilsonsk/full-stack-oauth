@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import * as actions from '../../actions';
 import styled, { keyframes } from 'styled-components';
 
-import { Container, MainGrid, Header, Logo, Menu, Cta, Hero, ValueProp, Cta2 } from '../../components/presentational/portfolio/profile';
+import { Container, MainGrid, Header, MenuItem, CtaHeader, Cta, Hero, ValueProp, Cta2, HireMeButton } from '../../components/presentational/portfolio/profile';
 
 class HeroSection extends Component {
 	constructor(props) {
@@ -40,20 +40,21 @@ class HeroSection extends Component {
 			<Container>
 				<MainGrid>
 					<Header>
-						<div>
-							<Logo src="https://i.imgur.com/WdC6ty8.png" />
-						</div>
-						<Menu>
-							<div>Home </div>
-							<div>Features </div>
-							<div>Blog </div>
-							<div>Download </div>
-						</Menu>
+						<MenuItem>
+							Gallery
+						</MenuItem>
+						<MenuItem>
+							Resume
+						</MenuItem>
+						<MenuItem logo>
+							Sky Wilson
+						</MenuItem>
 					</Header>
 					<Hero>
 					</Hero>
-					<Cta>
-					</Cta>
+					<CtaHeader>
+						<Cta>Hire Me <HireMeButton>+</HireMeButton></Cta>
+					</CtaHeader>
 
 					<Header>
 					</Header>
@@ -63,10 +64,13 @@ class HeroSection extends Component {
 					</Cta>
 					
 					<ValueProp>
+						<div>Designer & Developer</div>
+						<div>in Portland, Oregon.</div>
 					</ValueProp>
 					<Hero>
 					</Hero>
 					<Cta2>
+						<div>See My Work<HireMeButton cta2>+</HireMeButton></div>
 					</Cta2>
 										
 				</MainGrid>

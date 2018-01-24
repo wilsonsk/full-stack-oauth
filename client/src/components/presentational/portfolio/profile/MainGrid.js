@@ -23,7 +23,7 @@ const MainGrid = styled.section`
 	  grid-template-rows: repeat(2, auto);
 	  grid-template-areas: 
 		"Header Hero Cta"
-		"ValuePropi Hero Cta2";
+		"ValueProp Hero Cta2";
   }
 
   > * {
