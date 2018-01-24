@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 
 import * as actions from '../actions';
 
-import LandingPage from './LandingPage/LandingPage';
+import LandingPage from './landingPage/LandingPage';
+import Portfolio from './portfolio/Portfolio';
 
 const styles = {
 	fontMontserrat: {
@@ -22,7 +23,7 @@ class App extends Component {
 	    return (
 		<BrowserRouter>
 			<div style={styles.fontMontserrat}>
-				<Route path="/" component={LandingPage} />
+				<Route path="/" component={Portfolio} />
 			</div>
 		</BrowserRouter>
 	    );
