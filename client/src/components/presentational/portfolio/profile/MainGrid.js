@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const MainGrid = styled.section`
   // Style Settings
-  background-color: linear-gradient(90deg, white, #F2F3F7);
+  background-color: linear-gradient(90deg, white, #F0F2F3);
   border: solid white 4px;
   box-shadow: 0px 1px 10px black; 
   box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
