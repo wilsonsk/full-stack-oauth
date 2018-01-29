@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import * as actions from '../../actions';
+import * as actions from '../../../actions';
 import styled, { keyframes } from 'styled-components';
 
-import { Footer, Container, FooterContent, FooterLogo, FooterContentColumnMainRow, FooterContentColumnA, FooterColumnHeadline, FooterPosts, FooterPostItem, FooterContentColumnB, FooterNews, FooterNewsRowItem, FooterContentColumnC, FooterAboutPara, SmallText } from '../../components/presentational/portfolio/footer';
+import { Footer, Container, FooterContent, FooterLogo, FooterContentColumnMainRow, FooterContentColumnA, FooterColumnHeadline, FooterPosts, FooterPostItem, FooterContentColumnB, FooterNews, FooterNewsRowItem, FooterContentColumnC, FooterAboutPara, SmallText } from '../../../components/presentational/portfolio/footer';
 
 class FooterSection extends Component {
 	constructor(props) {

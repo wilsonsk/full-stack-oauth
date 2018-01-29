@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route  } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import * as actions from '../actions';
 
 import LandingPage from './landingPage/LandingPage';
-import Portfolio from './portfolio/Portfolio';
+import Portfolio from './portfolio/landingPage/Portfolio';
+import Gallery from './portfolio/gallery/Gallery';
 
 const styles = {
 	fontMontserrat: {
@@ -23,7 +24,9 @@ class App extends Component {
 	    return (
 		<BrowserRouter>
 			<div style={styles.fontMontserrat}>
-				<Route path="/" component={Portfolio} />
+				<Route exact path="/" component={Portfolio} />
+				<Route exact path="/landing" component={LandingPage} />
+				<Route exact path="/gallery" component={Gallery} />
 			</div>
 		</BrowserRouter>
 	    );

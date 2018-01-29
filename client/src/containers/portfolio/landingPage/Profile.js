@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import * as actions from '../../actions';
+import * as actions from '../../../actions';
 import styled, { keyframes } from 'styled-components';
 
-import { Container, MainGrid, Header, MenuItem, CtaHeader, Cta, Hero, ValueProp, Cta2, HireMeButton } from '../../components/presentational/portfolio/profile';
+import { Container, MainGrid, Header, MenuItem, CtaHeader, Cta, Hero, ValueProp, Cta2, HireMeButton } from '../../../components/presentational/portfolio/profile';
 
 class HeroSection extends Component {
 	constructor(props) {
@@ -41,10 +41,10 @@ class HeroSection extends Component {
 				<MainGrid>
 					<Header>
 						<MenuItem>
-							Gallery
+							<a>Gallery</a>
 						</MenuItem>
 						<MenuItem>
-							Resume
+							<a>Resume</a>
 						</MenuItem>
 						<MenuItem logo>
 							Sky Wilson

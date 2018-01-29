@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import * as actions from '../../actions';
+import * as actions from '../../../actions';
 import styled, { keyframes } from 'styled-components';
 
-import { Hero, Container, Header, HeaderLogo, NavbarHeaderMenu, NavbarHeaderMenuItem } from '../../components/presentational/portfolio/hero/header';
+import { Hero, Container, Header, HeaderLogo, NavbarHeaderMenu, NavbarHeaderMenuItem } from '../../../components/presentational/portfolio/hero/header';
 
-import { Cta, CtaInfo, CtaHeadline, CtaValueProposition, CtaButton, IphoneIcon, IphoneHeroOff, IphoneHeroOn, IphoneHeroButton, IphoneImage } from '../../components/presentational/portfolio/hero/cta';
+import { Cta, CtaInfo, CtaHeadline, CtaValueProposition, CtaButton, IphoneIcon, IphoneHeroOff, IphoneHeroOn, IphoneHeroButton, IphoneImage } from '../../../components/presentational/portfolio/hero/cta';
 
 class HeroSection extends Component {
 	constructor(props) {

@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import * as actions from '../../actions';
+import * as actions from '../../../actions';
 import styled, { keyframes } from 'styled-components';
 
-import { Cta2, Container, Cta2Content, Cta2Column, Cta2Header, Cta2ParaRedText, Cta2Para, Cta2Button, DogHero } from '../../components/presentational/portfolio/cta2';
+import { Cta2, Container, Cta2Content, Cta2Column, Cta2Header, Cta2ParaRedText, Cta2Para, Cta2Button, DogHero } from '../../../components/presentational/portfolio/cta2';
 
 class Cta2Section extends Component {
 	constructor(props) {

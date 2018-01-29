@@ -27,7 +27,6 @@ const MainGrid = styled.section`
   }
 
   > * {
-    border: solid black 1px;
   }
 `;
 
