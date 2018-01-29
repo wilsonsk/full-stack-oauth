@@ -18,7 +18,7 @@ class Gallery extends Component {
 			return this.props.photos.map((photo) => {
 				var uri = decodeURIComponent(photo.uri);
 				return (
-					<img src={uri}></img>
+					<Photo src={uri}></Photo>
 				);
 			})
 		} else {
