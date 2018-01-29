@@ -8,10 +8,3 @@ export const fetchPhotos = () => async dispatch => {
 	const res = await axios.get('/api/photos');
 	dispatch({ type: FETCH_PHOTOS, payload: res.data })
 }
-
-export const addPhoto = (photoUri) => async dispatch => {
-	// get photos from state
-	//const res = await axios.post('/api/photos/' + photoUri);
-	//dispatch({ type: FETCH_PHOTOS, payload: res.data })
-	alert(photoUri);
-}
