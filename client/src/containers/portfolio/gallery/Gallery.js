@@ -19,7 +19,7 @@ class Gallery extends Component {
 				var uri = decodeURIComponent(photo.uri);
 				alert(photo.uri + " VS. " + uri);
 				return (
-					<Photo src={JSON.stringify(uri)}></Photo>
+					<img src={JSON.stringify(uri)}></img>
 				);
 			})
 		} else {
