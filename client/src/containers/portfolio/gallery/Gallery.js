@@ -14,8 +14,8 @@ class Gallery extends Component {
 	}
 
 	renderPhotos() {
-		if(this.props.photos.photos.length>0) {
-			return this.props.photos.photos.map((photo) => {
+		if(this.props.photos.length>0) {
+			return this.props.photos.map((photo) => {
 				return (
 					<Photo href={JSON.stringify(photo.uri)}></Photo>
 				);
@@ -43,7 +43,7 @@ class Gallery extends Component {
 }
 
 function mapStateToProps(state) {
-	return { photos: state.photos };
+	return { photos: state.photos.photos };
 }
 
 export default connect(mapStateToProps, actions)(Gallery);

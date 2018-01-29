@@ -15,7 +15,6 @@ class AddPhoto extends Component {
 	}
 
 	_handleSubmit(e) {
-		if(e) e.preventDefault();
 		this._addPhoto(this.refs.photoUriInput.value);
 	}
 
