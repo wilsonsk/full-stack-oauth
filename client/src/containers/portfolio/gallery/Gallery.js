@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../../actions';
 
 import AddPhoto from './AddPhoto';
-import { PhotoGrid, Photo } from '../../../components/presentational/portfolio/gallery';
+import { Container, PhotoGrid, Photo } from '../../../components/presentational/portfolio/gallery';
 
 import axios from 'axios';
 
@@ -34,13 +34,13 @@ class Gallery extends Component {
 
 	render() {
 		return (
-			<div>
+			<Container>
 				<AddPhoto />
 				<PhotoGrid>
 					{this.renderPhotos()}
 				</PhotoGrid>
 
-			</div>
+			</Container>
 		);
 	}
 

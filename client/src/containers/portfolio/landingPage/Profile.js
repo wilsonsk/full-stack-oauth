@@ -41,10 +41,10 @@ class HeroSection extends Component {
 				<MainGrid>
 					<Header>
 						<MenuItem>
-							<a>Gallery</a>
+							<a href="/gallery">Gallery</a>
 						</MenuItem>
 						<MenuItem>
-							<a>Resume</a>
+							<a href="#">Resume</a>
 						</MenuItem>
 						<MenuItem logo>
 							Sky Wilson
