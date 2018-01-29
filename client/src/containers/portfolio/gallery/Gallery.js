@@ -16,8 +16,9 @@ class Gallery extends Component {
 	renderPhotos() {
 		if(this.props.photos.length>0) {
 			return this.props.photos.map((photo) => {
+				var uri = decodeURIComponent(photo.uri);
 				return (
-					<Photo href={JSON.stringify(photo.uri)}></Photo>
+					<Photo href={JSON.stringify(uri)}></Photo>
 				);
 			})
 		} else {

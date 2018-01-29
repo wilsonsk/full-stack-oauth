@@ -10,8 +10,8 @@ class AddPhoto extends Component {
 	}
 
 	async _addPhoto(photoUri) {
-		alert(photoUri);
-		const res = await axios.post('/api/photos/' + photoUri);
+		var uri = encodeURIComponent(photoUri);
+		const res = await axios.post('/api/photos/' + uri);
 	}
 
 	_handleSubmit(e) {
