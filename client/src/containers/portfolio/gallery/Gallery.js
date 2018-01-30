@@ -76,7 +76,7 @@ class Gallery extends Component {
 					hasMore={this.state.hasMore}
 					loadMore={this._loadMore.bind(this)}
 					loader={<h3>Loading...</h3>}
-					sizes={[{ columns: 4, gutter: 10 }, { mq: '768px', columns: 2, gutter: 20 }, { mq: '1024px', columns: 3, gutter: 20 }]}
+					sizes={[{ columns: 3, gutter: 10 }, { mq: '768px', columns: 1, gutter: 20 }, { mq: '1024px', columns: 3, gutter: 20 }]}
 				>
 					{
 						this.state.photos.map((photo) => {
