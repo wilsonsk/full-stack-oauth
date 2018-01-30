@@ -4,11 +4,13 @@ import styled from 'styled-components';
 const PhotoGrid = styled.div`
   border: solid black 5px;
 
+
 // Grid Settings
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px,1fr));
-  grid-template-rows: 50px;
-  grid-gap: 10%;
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+  grid-auto-rows: repeat(auto-fill, 200px);
+  grid-auto-flow: dense;
+  grid-gap: 1%;
 `;
 
 export { PhotoGrid };

@@ -7,24 +7,15 @@ import AddPhoto from './AddPhoto';
 import { Container, PhotoGrid, Photo } from '../../../components/presentational/portfolio/gallery';
 
 import axios from 'axios';
+import MasonryInfiniteScroller from 'react-masonry-infinite';
 
 class Gallery extends Component {
-	_loadMore() {
-		this.props.fetchPhotos();
-	}
-
-	renderPhotos() {
-		if(this.props.photos.length>0) {
-			return this.props.photos.map((photo) => {
-				var uri = decodeURIComponent(photo.uri);
-				return (
-					<Photo src={uri}></Photo>
-				);
-			})
-		} else {
-			return (
-				<div>No Photos</div>
-			);
+	constructor() {
+		super();
+		this.state = {
+			index: 0,
+			photos: [],
+			hasMore: true,
 		}
 	}
 
@@ -32,14 +23,71 @@ class Gallery extends Component {
 		this.props.fetchPhotos();
 	}
 
+	_loadMore() {
+		if(this.props.photos[this.state.index]) {
+			this.setState({
+				photos: [...this.state.photos, this.props.photos[this.state.index]],
+			});
+			if(!this.props.photos[this.state.index+1]) {
+				this.setState({
+					hasMore: false
+				});
+			} else {
+				this.setState({
+					index: this.state.index+1
+				});
+			}
+		}
+	}
+
+	renderPhotos() {
+		return (
+			<PhotoGrid>
+			{
+				this.state.photos.map((photo) => {
+					var uri = decodeURIComponent(photo.uri);
+					return (
+						<Photo src={uri}></Photo>
+					);
+				})
+			}
+			</PhotoGrid>
+		);
+//		if(this.props.photos.length>0) {
+//			return this.props.photos.map((photo) => {
+//				var uri = decodeURIComponent(photo.uri);
+//				return (
+//					<Photo src={uri}></Photo>
+//				);
+//			})
+//		} else {
+//			return (
+//				<div>No Photos</div>
+//			);
+//		}
+	}
+
+
 	render() {
 		return (
 			<Container>
 				<AddPhoto />
-				<PhotoGrid>
-					{this.renderPhotos()}
-				</PhotoGrid>
-
+				<MasonryInfiniteScroller
+					hasMore={this.state.hasMore}
+					loadMore={this._loadMore.bind(this)}
+					loader={<h3>Loading...</h3>}
+				>
+					<PhotoGrid>
+					{
+						this.state.photos.map((photo) => {
+							var uri = decodeURIComponent(photo.uri);
+							return (
+								<Photo src={uri}></Photo>
+							);
+						})
+					}
+					</PhotoGrid>
+				</MasonryInfiniteScroller>
 			</Container>
 		);
 	}
