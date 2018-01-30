@@ -76,17 +76,16 @@ class Gallery extends Component {
 					hasMore={this.state.hasMore}
 					loadMore={this._loadMore.bind(this)}
 					loader={<h3>Loading...</h3>}
+					sizes={[{ columns: 4, gutter: 10 }, { mq: '768px', columns: 2, gutter: 20 }, { mq: '1024px', columns: 3, gutter: 20 }]}
 				>
-					<PhotoGrid>
 					{
 						this.state.photos.map((photo) => {
 							var uri = decodeURIComponent(photo.uri);
 							return (
-								<Photo src={uri}></Photo>
+								<Photo key={uri} src={uri}></Photo>
 							);
 						})
 					}
-					</PhotoGrid>
 				</MasonryInfiniteScroller>
 			</Container>
 		);

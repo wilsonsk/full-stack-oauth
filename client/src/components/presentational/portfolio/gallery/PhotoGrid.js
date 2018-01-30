@@ -9,7 +9,6 @@ const PhotoGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
   grid-auto-rows: repeat(auto-fill, 200px);
-  grid-auto-flow: dense;
   grid-gap: 1%;
 `;
 
