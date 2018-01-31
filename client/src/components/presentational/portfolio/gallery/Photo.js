@@ -22,6 +22,9 @@ const Photo = styled.img`
   @media (min-width: 1024px) {
 	width: 30vw;
   }
+  @media (min-width: 1500px) {
+	width: 23vw;
+  }
   @media (min-width: 1900px) {
 	width: 20vw;
   }
