@@ -54,7 +54,7 @@ class Gallery extends Component {
 			<Container>
 				<AddPhoto />
 				<MasonryInfiniteScroller
-					style={{minHeight:'200px'}}
+					pack={true}
 					hasMore={this.state.hasMore}
 					loadMore={this._loadMore.bind(this)}
 					loader={<h3>Loading...</h3>}
