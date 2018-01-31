@@ -76,12 +76,12 @@ class Gallery extends Component {
 					hasMore={this.state.hasMore}
 					loadMore={this._loadMore.bind(this)}
 					loader={<h3>Loading...</h3>}
-					position={false}
+					container={this.galleryContainer}
 					sizes={[
 						{ mq: '320px', columns: 1, gutter: 0 }, 
 						{ mq: '375px', columns: 1, gutter: 0 }, 
 						{ mq: '768px', columns: 2, gutter: 5 }, 
-						{ mq: '1023px', columns: 3, gutter: 10 }
+						{ mq: '1024px', columns: 3, gutter: 10 }
 					]}
 				>
 					{
