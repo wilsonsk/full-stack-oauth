@@ -41,38 +41,20 @@ class Gallery extends Component {
 	}
 
 	renderPhotos() {
-		return (
-			<PhotoGrid>
-			{
-				this.state.photos.map((photo) => {
-					var uri = decodeURIComponent(photo.uri);
-					return (
-						<Photo src={uri}></Photo>
-					);
-				})
-			}
-			</PhotoGrid>
-		);
-//		if(this.props.photos.length>0) {
-//			return this.props.photos.map((photo) => {
-//				var uri = decodeURIComponent(photo.uri);
-//				return (
-//					<Photo src={uri}></Photo>
-//				);
-//			})
-//		} else {
-//			return (
-//				<div>No Photos</div>
-//			);
-//		}
+		return this.state.photos.map((photo) => {
+			var uri = decodeURIComponent(photo.uri);
+			return (
+				<Photo key={uri} src={uri}></Photo>
+			);
+		})
 	}
-
 
 	render() {
 		return (
 			<Container>
 				<AddPhoto />
 				<MasonryInfiniteScroller
+					style={{minHeight:'auto'}}
 					hasMore={this.state.hasMore}
 					loadMore={this._loadMore.bind(this)}
 					loader={<h3>Loading...</h3>}
@@ -86,12 +68,7 @@ class Gallery extends Component {
 					]}
 				>
 					{
-						this.state.photos.map((photo) => {
-							var uri = decodeURIComponent(photo.uri);
-							return (
-								<Photo key={uri} src={uri}></Photo>
-							);
-						})
+						this.renderPhotos()
 					}
 				</MasonryInfiniteScroller>
 			</Container>
