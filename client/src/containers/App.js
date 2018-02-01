@@ -8,6 +8,8 @@ import LandingPage from './landingPage/LandingPage';
 import Portfolio from './portfolio/landingPage/Portfolio';
 import Gallery from './portfolio/gallery/Gallery';
 
+import Landing from './portfolio/testLanding_1/Landing';
+
 const styles = {
 	fontMontserrat: {
 		fontFamily: 'Montserrat',
@@ -24,7 +26,8 @@ class App extends Component {
 	    return (
 		<BrowserRouter>
 			<div style={styles.fontMontserrat}>
-				<Route exact path="/" component={Portfolio} />
+		    		<Route exact path="/" component={Landing} />
+				<Route exact path="/portfolio" component={Portfolio} />
 				<Route exact path="/landing" component={LandingPage} />
 				<Route exact path="/gallery" component={Gallery} />
 			</div>
