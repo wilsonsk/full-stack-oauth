@@ -6,8 +6,11 @@ const MainGrid = styled.div`
   grid-template-columns: 1fr 3fr 1fr;
   grid-auto-rows: 100vh;
 
-  > * {
-	border: black solid 3px;
+  border: ${props => props.grid ? 'solid black 1px' : null};
+
+  @media(max-width: 320px) {
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
   }
 `;
 
