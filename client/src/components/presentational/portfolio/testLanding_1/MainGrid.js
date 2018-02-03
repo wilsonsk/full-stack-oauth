@@ -3,14 +3,22 @@ import styled from 'styled-components';
 
 const MainGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
-  grid-auto-rows: 100vh;
 
   border: ${props => props.grid ? 'solid black 1px' : null};
 
-  @media(max-width: 320px) {
+  @media(max-width: 768px) {
 	grid-template-columns: 1fr;
-	grid-template-rows: auto;
+	grid-auto-rows: 50vh;
+  }
+
+  @media(max-width: 1210px) and (min-width: 769px){
+	grid-template-columns: 1fr 3fr 0.5fr;
+	grid-auto-rows: 100vh;
+  }
+
+  @media(max-width: 1600px) and (min-width: 1210px){
+	grid-template-columns: 1fr 3fr 1fr;
+	grid-auto-rows: 100vh;
   }
 `;
 

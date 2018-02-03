@@ -29,10 +29,10 @@ class Landing extends Component {
 						<Cta grid={this.state.grid}>
 							<CtaText grid={this.state.grid}>A frontend developer with a passion for <WhiteText>beatiful UI</WhiteText></CtaText>
 							<CtaLink grid={this.state.grid}>
-								hi
+								<WhiteText>See My GitHub</WhiteText>
 							</CtaLink>
 							<CtaLogo grid={this.state.grid}>
-								world
+								(logo)
 							</CtaLogo>
 						</Cta>
 					</CtaColumn>
