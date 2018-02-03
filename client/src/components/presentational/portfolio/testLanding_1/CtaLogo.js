@@ -5,6 +5,9 @@ const CtaLogo = styled.div`
   grid-area: logo;
   justify-self: end;
   border: ${props => props.grid ? 'solid black 1px' : null};
+ 
+  margin-bottom: 1em;
+  border-bottom: solid #3D1E37 3px;
 `;
 
 export { CtaLogo };
