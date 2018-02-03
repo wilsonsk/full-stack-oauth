@@ -1,4 +1,4 @@
-export * from './Container';
+export * from './Section_1';
 export * from './MainGrid';
 export * from './LogoColumn';
 export * from './Logo';
