@@ -3,11 +3,10 @@ import styled from 'styled-components';
 
 const CtaColumn = styled.div`
   display: grid;
-  grid-template-rows: 1.618fr 1fr 0.5fr;
+  grid-template-rows: 1.618fr 1fr;
   grid-template-areas:
-	"space"
-	"cta"
-	"icon";
+	"."
+	"cta";
 
   > * {
 	  margin: 0;

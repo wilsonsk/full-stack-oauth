@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import * as actions from '../../../actions';
 
-import { Section_1, MainGrid, LogoColumn, Logo, CtaColumn, Cta, WhiteText } from '../../../components/presentational/portfolio/testLanding_1';
+import { Section_1, MainGrid, LogoColumn, Logo, CtaColumn, Cta, CtaText, CtaLink, CtaLogo, WhiteText } from '../../../components/presentational/portfolio/testLanding_1';
 class Landing extends Component {
 	constructor(props) {
 		super(props);
@@ -26,7 +26,15 @@ class Landing extends Component {
 						<Logo grid={this.state.grid}>Sky <WhiteText>Wilson</WhiteText></Logo>
 					</LogoColumn>
 					<CtaColumn grid={this.state.grid}>
-						<Cta grid={this.state.grid}>A frontend developer with a passion for <WhiteText>beatiful UI</WhiteText></Cta>
+						<Cta grid={this.state.grid}>
+							<CtaText grid={this.state.grid}>A frontend developer with a passion for <WhiteText>beatiful UI</WhiteText></CtaText>
+							<CtaLink grid={this.state.grid}>
+								hi
+							</CtaLink>
+							<CtaLogo grid={this.state.grid}>
+								world
+							</CtaLogo>
+						</Cta>
 					</CtaColumn>
 				</MainGrid>
 			</Section_1>
