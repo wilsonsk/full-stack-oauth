@@ -16,7 +16,7 @@ const MainGrid = styled.div`
 	grid-auto-rows: 100vh;
   }
 
-  @media(max-width: 1600px) and (min-width: 1210px){
+  @media(min-width: 1211px) {
 	grid-template-columns: 1fr 3fr 1fr;
 	grid-auto-rows: 100vh;
   }
