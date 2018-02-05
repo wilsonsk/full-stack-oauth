@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const CtaText = styled.p`
   grid-area: text;
   margin: 0;
-  border: ${props => props.grid ? 'solid black 1px' : null};
+  border: ${props => props.grid ? 'solid white 1px' : null};
 `;
 
 export { CtaText };

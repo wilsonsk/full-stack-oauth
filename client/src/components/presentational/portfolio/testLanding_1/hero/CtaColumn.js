@@ -18,7 +18,7 @@ const CtaColumn = styled.div`
 	  padding-left: 10%;
   }
 
-  border: ${props => props.grid ? 'solid black 1px' : null};
+  border: ${props => props.grid ? 'solid white 1px' : null};
 `;
 
 export { CtaColumn };

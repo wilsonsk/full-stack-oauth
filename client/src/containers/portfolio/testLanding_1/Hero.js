@@ -3,35 +3,37 @@ import { connect } from 'react-redux';
 
 import * as actions from '../../../actions';
 
-import { Section_1, MainGrid, LogoColumn, Logo, CtaColumn, Cta, CtaText, CtaLink, CtaLogo, WhiteText } from '../../../components/presentational/portfolio/testLanding_1';
+import { Section_1, MainGrid, LogoColumn, Logo, CtaColumn, Cta, CtaText, CtaLink, CtaLogo, WhiteText } from '../../../components/presentational/portfolio/testLanding_1/hero';
+
 class Hero extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			grid: false
-		}
+		this.props.setGrid(false);
 	}
 
 	_clickGrid() {
-		this.setState({
-			grid: !this.state.grid
-		});
+		var grid = this.props.grid,
+		    gridIndex = grid.length-1;
+
+		this.props.setGrid(!grid[gridIndex]);
 	}
 	
 	render() {
+		var grid = this.props.grid,
+		    gridIndex = grid.length-1;
 		return (
-			<Section_1 onClick={this._clickGrid.bind(this)}>
-				<MainGrid grid={this.state.grid}>
-					<LogoColumn grid={this.state.grid}>
-						<Logo grid={this.state.grid}>Sky <WhiteText>Wilson</WhiteText></Logo>
+			<Section_1 grid={grid[gridIndex]} >
+				<MainGrid grid={grid[gridIndex]}>
+					<LogoColumn grid={grid[gridIndex]}>
+						<Logo grid={grid[gridIndex]}>Sky <WhiteText>Wilson</WhiteText></Logo>
 					</LogoColumn>
-					<CtaColumn grid={this.state.grid}>
-						<Cta grid={this.state.grid}>
-							<CtaText grid={this.state.grid}>A frontend developer with a passion for <WhiteText>beatiful UI</WhiteText></CtaText>
-							<CtaLink grid={this.state.grid}>
-								<WhiteText>See My GitHub</WhiteText>
+					<CtaColumn grid={grid[gridIndex]}>
+						<Cta grid={grid[gridIndex]}>
+							<CtaText grid={grid[gridIndex]}>A frontend developer with a passion for <WhiteText>beatiful UI</WhiteText></CtaText>
+							<CtaLink grid={grid[gridIndex]}>
+								<button onClick={this._clickGrid.bind(this)}>See My Grid</button>
 							</CtaLink>
-							<CtaLogo grid={this.state.grid}>
+							<CtaLogo grid={grid[gridIndex]}>
 								(logo)
 							</CtaLogo>
 						</Cta>
@@ -42,4 +44,8 @@ class Hero extends Component {
 	}
 }
 
-export default connect(null, actions)(Hero);
+function mapStateToProps(state) {
+	return { grid: state.grid.grid };
+}
+
+export default connect(mapStateToProps, actions)(Hero);

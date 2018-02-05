@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const MainGrid = styled.div`
   display: grid;
 
-  border: ${props => props.grid ? 'solid black 1px' : null};
+  border: ${props => props.grid ? 'solid white 1px' : null};
 
   @media(max-width: 768px) {
 	grid-template-columns: 1fr;

@@ -21,7 +21,7 @@ const Cta = styled.div`
 	  align-items: end;
   }
 
-  border: ${props => props.grid ? 'solid black 1px' : null};
+  border: ${props => props.grid ? 'solid white 1px' : null};
 `;
 
 export { Cta };

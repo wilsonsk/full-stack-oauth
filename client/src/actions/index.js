@@ -6,6 +6,7 @@ export * from './fetchUserAction';
 export * from './handleTokenAction';
 export * from './flippedActions';
 export * from './ctaTransformActions';
+export * from './gridActions';
 
 export const addSendAmount = (amount) => {
 	console.log(amount);

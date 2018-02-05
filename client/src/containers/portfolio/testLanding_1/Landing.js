@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../../actions';
 
 import Hero from './Hero';
+import Features from './Features';
 
 class Landing extends Component {
 	constructor(props) {
@@ -14,7 +15,10 @@ class Landing extends Component {
 	
 	render() {
 		return (
-			<Hero />
+			<div>
+				<Hero />
+				<Features />
+			</div>
 		);
 	}
 }
