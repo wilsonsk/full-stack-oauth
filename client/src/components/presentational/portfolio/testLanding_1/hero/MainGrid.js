@@ -6,6 +6,15 @@ const MainGrid = styled.div`
 
   border: ${props => props.grid ? 'solid white 1px' : null};
 
+
+  @media(min-width: 200px) and (max-width: 388px) {
+	grid-template-rows: 30vh;
+  }
+
+  @media(min-width: 388px) and (max-width: 595px) {
+	grid-template-rows: 40vh;
+  }
+
   @media(max-width: 768px) {
 	grid-template-columns: 1fr;
 	grid-auto-rows: 50vh;

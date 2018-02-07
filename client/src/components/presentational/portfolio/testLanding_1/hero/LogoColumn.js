@@ -8,7 +8,7 @@ const LogoColumn = styled.div`
 	grid-template-areas:
 		"logo"
   }
-  @media(min-width: 769px) {
+  @media(min-width: 768px) {
 	grid-template-rows: 1fr 1.618fr;
 	grid-template-areas:
 		"logo"

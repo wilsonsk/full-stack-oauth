@@ -14,6 +14,7 @@ const CtaColumn = styled.div`
 	  font-weight: 600;
   }
 
+
   @media(max-width: 768px) and (min-width: 420px){
 	  padding-left: 10%;
   }
