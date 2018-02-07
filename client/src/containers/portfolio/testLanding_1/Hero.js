@@ -30,8 +30,8 @@ class Hero extends Component {
 					<CtaColumn grid={grid[gridIndex]}>
 						<Cta grid={grid[gridIndex]}>
 							<CtaText grid={grid[gridIndex]}>A frontend developer with a passion for <WhiteText>beatiful UI</WhiteText></CtaText>
-							<CtaLink grid={grid[gridIndex]}>
-								<button onClick={this._clickGrid.bind(this)}>See My Grid</button>
+							<CtaLink grid={grid[gridIndex]} onClick={this._clickGrid.bind(this)}>
+								<a>See My Grid</a>
 							</CtaLink>
 							<CtaLogo grid={grid[gridIndex]}>
 								(logo)
