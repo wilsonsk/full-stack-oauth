@@ -16,10 +16,12 @@ const CtaLink = styled.div`
   border: ${props => props.grid ? 'solid white 1px' : 'solid #3D1E37 1px'};
   box-shadow: 3px 3px 10px #3D1E37;
 
-  @media(min-width: 200px) and (max-width: 768px) {
+  @media(min-width: 200px) and (max-width: 620px) {
 	justify-self: center;
 	font-size: 9pt;
   }
+  @media(min-width: 620px) and (max-width: 768px) {
+	font-size: 9pt;
 
   &:hover {
 	border: solid white 1px;
