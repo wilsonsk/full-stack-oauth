@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import * as actions from '../../../actions';
 
-import { Section_2 } from '../../../components/presentational/portfolio/testLanding_1/features';
+import { Section_2, WrapperGrid, MainGrid, LeftColumn, RightColumn, Header, SubHeaderColumn, SubHead, SubHeadFeatColumn, SubHeadFeatItem, LeftSpace } from '../../../components/presentational/portfolio/testLanding_1/features';
 
 class Features extends Component {
 	constructor(props) {
@@ -22,7 +22,78 @@ class Features extends Component {
 		var grid = this.props.grid,
 		    gridIndex = grid.length-1;
 		return (
-			<Section_2 grid={grid[gridIndex]}>
+			<Section_2 grid={grid[gridIndex]} onClick={this._clickGrid.bind(this)}>
+				<WrapperGrid grid={grid[gridIndex]}>
+					<LeftSpace>
+						Sky Wilson
+					</LeftSpace>
+					<MainGrid grid={grid[gridIndex]}>
+						<LeftColumn grid={grid[gridIndex]}>
+							<Header grid={grid[gridIndex]}>
+								Test
+
+							</Header>
+							<Header grid={grid[gridIndex]}>
+								Test
+
+							</Header>
+							<Header grid={grid[gridIndex]}>
+								Test
+
+							</Header>
+						</LeftColumn>
+						<RightColumn grid={grid[gridIndex]}>
+							<SubHeaderColumn grid={grid[gridIndex]}>
+								<SubHead grid={grid[gridIndex]}>
+
+								</SubHead>
+								<SubHeadFeatColumn grid={grid[gridIndex]}>
+									<SubHeadFeatItem grid={grid[gridIndex]}>
+
+									</SubHeadFeatItem>
+									<SubHeadFeatItem grid={grid[gridIndex]}>
+
+									</SubHeadFeatItem>
+									<SubHeadFeatItem grid={grid[gridIndex]}>
+
+									</SubHeadFeatItem>
+								</SubHeadFeatColumn>
+							</SubHeaderColumn>
+							<SubHeaderColumn grid={grid[gridIndex]}>
+								<SubHead grid={grid[gridIndex]}>
+
+								</SubHead>
+								<SubHeadFeatColumn grid={grid[gridIndex]}>
+									<SubHeadFeatItem grid={grid[gridIndex]}>
+
+									</SubHeadFeatItem>
+									<SubHeadFeatItem grid={grid[gridIndex]}>
+
+									</SubHeadFeatItem>
+									<SubHeadFeatItem grid={grid[gridIndex]}>
+
+									</SubHeadFeatItem>
+								</SubHeadFeatColumn>
+							</SubHeaderColumn>
+							<SubHeaderColumn grid={grid[gridIndex]}>
+								<SubHead grid={grid[gridIndex]}>
+
+								</SubHead>
+								<SubHeadFeatColumn grid={grid[gridIndex]}>
+									<SubHeadFeatItem grid={grid[gridIndex]}>
+
+									</SubHeadFeatItem>
+									<SubHeadFeatItem grid={grid[gridIndex]}>
+
+									</SubHeadFeatItem>
+									<SubHeadFeatItem grid={grid[gridIndex]}>
+
+									</SubHeadFeatItem>
+								</SubHeadFeatColumn>
+							</SubHeaderColumn>
+						</RightColumn>
+					</MainGrid>
+				</WrapperGrid>
 			</Section_2>
 		);
 	}

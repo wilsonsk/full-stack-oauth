@@ -8,16 +8,16 @@ const MainGrid = styled.div`
 
 
   @media(min-width: 200px) and (max-width: 388px) {
-	grid-template-rows: 30vh;
+	grid-template-rows: 28vh;
   }
 
   @media(min-width: 388px) and (max-width: 595px) {
-	grid-template-rows: 40vh;
+	grid-template-rows: 37.5vh;
   }
 
   @media(max-width: 768px) {
 	grid-template-columns: 1fr;
-	grid-auto-rows: 50vh;
+	grid-auto-rows: 47vh;
   }
 
   @media(max-width: 1210px) and (min-width: 769px){
