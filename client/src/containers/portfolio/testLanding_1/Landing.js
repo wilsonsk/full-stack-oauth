@@ -6,6 +6,9 @@ import * as actions from '../../../actions';
 import Hero from './Hero';
 import Features from './Features';
 
+import { Wrapper } from '../../../components/presentational/portfolio/testLanding_1/Landing';
+
+
 class Landing extends Component {
 	constructor(props) {
 		super(props);
@@ -15,10 +18,10 @@ class Landing extends Component {
 	
 	render() {
 		return (
-			<div>
+			<Wrapper>
 				<Hero />
 				<Features />
-			</div>
+			</Wrapper>
 		);
 	}
 }

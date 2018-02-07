@@ -3,6 +3,9 @@ import styled from 'styled-components';
 
 const Logo = styled.h1`
   grid-area: logo;
+  @media(min-width: 200px) and (max-width: 420px) {
+	font-size: 1em;
+  }
   @media(max-width: 420px) {
 	align-self: start;
   }
