@@ -6,7 +6,7 @@ const CtaLogo = styled.div`
   justify-self: end;
   border: ${props => props.grid ? 'solid white 1px' : null};
 
-  @media(min-width: 200px) and (max-width: 420px) {
+  @media(min-width: 200px) and (max-width: 768px) {
 	font-size: 0.5em;
   }
  

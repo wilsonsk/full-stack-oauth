@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Logo = styled.h1`
   grid-area: logo;
-  @media(min-width: 200px) and (max-width: 420px) {
+  @media(min-width: 200px) and (max-width: 768px) {
 	font-size: 1em;
   }
   @media(max-width: 420px) {
