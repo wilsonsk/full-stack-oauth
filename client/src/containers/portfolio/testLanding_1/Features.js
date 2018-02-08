@@ -42,11 +42,10 @@ class Features extends Component {
 	}
 
 	_parallax() {
-		var el = ReactDOM.findDOMNode(this.main);
-		alert(this.main);
 		this.setState({
-			parallaxTop: el.getBoundingClientRect().y + 'px'
+			parallaxTop: this.main.getBoundingClientRect().top + 'px'
 		});
+		alert(this.state.parallaxTop);
 	}
 
 	_renderMainGrid() {
@@ -193,14 +192,16 @@ class Features extends Component {
 		var grid = this.props.grid,
 		    gridIndex = grid.length-1;
 		return (
-			<Section_2 grid={grid[gridIndex]} ref={(el) => this.main = el}>
-				<WrapperGrid grid={grid[gridIndex]}>
-					<LeftSpace>
-						Sky Wilson
-					</LeftSpace>
-					{this._renderMainGrid()}
-				</WrapperGrid>
-			</Section_2>
+			<div ref={el => this.main = el}>
+				<Section_2 grid={grid[gridIndex]} >
+					<WrapperGrid grid={grid[gridIndex]}>
+						<LeftSpace>
+							Sky Wilson
+						</LeftSpace>
+						{this._renderMainGrid()}
+					</WrapperGrid>
+				</Section_2>
+			</div>
 		);
 	}
 }
