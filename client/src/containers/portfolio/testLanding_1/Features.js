@@ -22,7 +22,7 @@ class Features extends Component {
 		var grid = this.props.grid,
 		    gridIndex = grid.length-1;
 		return (
-			<Section_2 grid={grid[gridIndex]} onClick={this._clickGrid.bind(this)}>
+			<Section_2 grid={grid[gridIndex]}>
 				<WrapperGrid grid={grid[gridIndex]}>
 					<LeftSpace>
 						Sky Wilson

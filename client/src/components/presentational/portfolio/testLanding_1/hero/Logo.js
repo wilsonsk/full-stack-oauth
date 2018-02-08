@@ -7,7 +7,7 @@ const Logo = styled.h1`
 	font-size: 1em;
   }
   @media(max-width: 420px) {
-	align-self: start;
+	align-self: end;
   }
   @media(min-width: 388px) {
 	align-self: end;
