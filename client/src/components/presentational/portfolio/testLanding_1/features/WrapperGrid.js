@@ -5,7 +5,7 @@ const WrapperGrid = styled.div`
   display: grid;
 
   @media(min-width: 200px) and (max-width: 388px) {
-	grid-template-rows: 35vh;
+	grid-template-rows: auto;
   }
 
   @media(min-width: 420px) and (max-width: 768px) {

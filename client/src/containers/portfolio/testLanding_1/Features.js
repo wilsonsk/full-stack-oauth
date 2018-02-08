@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import * as actions from '../../../actions';
 
-import { Section_2, WrapperGrid, MainGrid, LeftColumn, RightColumn, Header, SubHeaderColumn, SubHead, SubHeadFeatColumn, SubHeadFeatItem, LeftSpace } from '../../../components/presentational/portfolio/testLanding_1/features';
+import { Section_2, WrapperGrid, MainGrid, LeftColumn, RightColumn, Header, SubHeaderColumn, SubHead, SubHeadFeatColumn, SubHeadFeatItem, LeftSpace, WhiteText } from '../../../components/presentational/portfolio/testLanding_1/features';
 
 class Features extends Component {
 	constructor(props) {
@@ -45,11 +45,11 @@ class Features extends Component {
 			return (
 				<MainGrid mobile={this.state.mobile} grid={grid[gridIndex]}>
 					<Header grid={grid[gridIndex]}>
-						test
+						<WhiteText>Designer</WhiteText>
 					</Header>
 					<SubHeaderColumn grid={grid[gridIndex]}>
 						<SubHead grid={grid[gridIndex]}>
-							Testing
+							<WhiteText>Testing</WhiteText>
 						</SubHead>
 						<SubHeadFeatColumn grid={grid[gridIndex]}>
 							<SubHeadFeatItem grid={grid[gridIndex]}>
@@ -64,11 +64,11 @@ class Features extends Component {
 						</SubHeadFeatColumn>
 					</SubHeaderColumn>
 					<Header grid={grid[gridIndex]}>
-						test
+						<WhiteText>Developer</WhiteText>
 					</Header>
 					<SubHeaderColumn grid={grid[gridIndex]}>
 						<SubHead grid={grid[gridIndex]}>
-							Testing
+							<WhiteText>Testing</WhiteText>
 						</SubHead>
 						<SubHeadFeatColumn grid={grid[gridIndex]}>
 							<SubHeadFeatItem grid={grid[gridIndex]}>

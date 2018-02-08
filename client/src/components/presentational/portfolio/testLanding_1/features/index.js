@@ -9,3 +9,4 @@ export * from './SubHeaderColumn';
 export * from './SubHeadFeatColumn';
 export * from './SubHeadFeatItem';
 export * from './LeftSpace';
+export * from './WhiteText';
