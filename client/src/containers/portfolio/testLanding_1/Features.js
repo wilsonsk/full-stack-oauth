@@ -9,6 +9,11 @@ class Features extends Component {
 	constructor(props) {
 		super(props);
 		this.props.setGrid(false);
+		window.addEventListener("resize", this.checkWidth.bind(this));
+		this.state = {
+			mobile: ''
+		}
+		this.checkWidth();
 	}
 
 	_clickGrid() {
@@ -16,6 +21,91 @@ class Features extends Component {
 		    gridIndex = grid.length-1;
 
 		this.props.setGrid(!grid[gridIndex]);
+	}
+
+	checkWidth() {
+		if(window.innerWidth < 768) {
+			this.setState({
+				mobile: true
+			});
+		} else {
+			this.setState({
+				mobile: false
+			});
+		}
+	}
+
+	_renderMainGrid() {
+		var grid = this.props.grid,
+		    gridIndex = grid.length-1;
+		return (
+			<MainGrid grid={grid[gridIndex]}>
+				<LeftColumn grid={grid[gridIndex]}>
+					<Header grid={grid[gridIndex]}>
+						Test
+
+					</Header>
+					<Header grid={grid[gridIndex]}>
+						Test
+
+					</Header>
+					<Header grid={grid[gridIndex]}>
+						Test
+
+					</Header>
+				</LeftColumn>
+				<RightColumn grid={grid[gridIndex]}>
+					<SubHeaderColumn grid={grid[gridIndex]}>
+						<SubHead grid={grid[gridIndex]}>
+
+						</SubHead>
+						<SubHeadFeatColumn grid={grid[gridIndex]}>
+							<SubHeadFeatItem grid={grid[gridIndex]}>
+
+							</SubHeadFeatItem>
+							<SubHeadFeatItem grid={grid[gridIndex]}>
+
+							</SubHeadFeatItem>
+							<SubHeadFeatItem grid={grid[gridIndex]}>
+
+							</SubHeadFeatItem>
+						</SubHeadFeatColumn>
+					</SubHeaderColumn>
+					<SubHeaderColumn grid={grid[gridIndex]}>
+						<SubHead grid={grid[gridIndex]}>
+
+						</SubHead>
+						<SubHeadFeatColumn grid={grid[gridIndex]}>
+							<SubHeadFeatItem grid={grid[gridIndex]}>
+
+							</SubHeadFeatItem>
+							<SubHeadFeatItem grid={grid[gridIndex]}>
+
+							</SubHeadFeatItem>
+							<SubHeadFeatItem grid={grid[gridIndex]}>
+
+							</SubHeadFeatItem>
+						</SubHeadFeatColumn>
+					</SubHeaderColumn>
+					<SubHeaderColumn grid={grid[gridIndex]}>
+						<SubHead grid={grid[gridIndex]}>
+
+						</SubHead>
+						<SubHeadFeatColumn grid={grid[gridIndex]}>
+							<SubHeadFeatItem grid={grid[gridIndex]}>
+
+							</SubHeadFeatItem>
+							<SubHeadFeatItem grid={grid[gridIndex]}>
+
+							</SubHeadFeatItem>
+							<SubHeadFeatItem grid={grid[gridIndex]}>
+
+							</SubHeadFeatItem>
+						</SubHeadFeatColumn>
+					</SubHeaderColumn>
+				</RightColumn>
+			</MainGrid>
+		);
 	}
 	
 	render() {
@@ -27,72 +117,7 @@ class Features extends Component {
 					<LeftSpace>
 						Sky Wilson
 					</LeftSpace>
-					<MainGrid grid={grid[gridIndex]}>
-						<LeftColumn grid={grid[gridIndex]}>
-							<Header grid={grid[gridIndex]}>
-								Test
-
-							</Header>
-							<Header grid={grid[gridIndex]}>
-								Test
-
-							</Header>
-							<Header grid={grid[gridIndex]}>
-								Test
-
-							</Header>
-						</LeftColumn>
-						<RightColumn grid={grid[gridIndex]}>
-							<SubHeaderColumn grid={grid[gridIndex]}>
-								<SubHead grid={grid[gridIndex]}>
-
-								</SubHead>
-								<SubHeadFeatColumn grid={grid[gridIndex]}>
-									<SubHeadFeatItem grid={grid[gridIndex]}>
-
-									</SubHeadFeatItem>
-									<SubHeadFeatItem grid={grid[gridIndex]}>
-
-									</SubHeadFeatItem>
-									<SubHeadFeatItem grid={grid[gridIndex]}>
-
-									</SubHeadFeatItem>
-								</SubHeadFeatColumn>
-							</SubHeaderColumn>
-							<SubHeaderColumn grid={grid[gridIndex]}>
-								<SubHead grid={grid[gridIndex]}>
-
-								</SubHead>
-								<SubHeadFeatColumn grid={grid[gridIndex]}>
-									<SubHeadFeatItem grid={grid[gridIndex]}>
-
-									</SubHeadFeatItem>
-									<SubHeadFeatItem grid={grid[gridIndex]}>
-
-									</SubHeadFeatItem>
-									<SubHeadFeatItem grid={grid[gridIndex]}>
-
-									</SubHeadFeatItem>
-								</SubHeadFeatColumn>
-							</SubHeaderColumn>
-							<SubHeaderColumn grid={grid[gridIndex]}>
-								<SubHead grid={grid[gridIndex]}>
-
-								</SubHead>
-								<SubHeadFeatColumn grid={grid[gridIndex]}>
-									<SubHeadFeatItem grid={grid[gridIndex]}>
-
-									</SubHeadFeatItem>
-									<SubHeadFeatItem grid={grid[gridIndex]}>
-
-									</SubHeadFeatItem>
-									<SubHeadFeatItem grid={grid[gridIndex]}>
-
-									</SubHeadFeatItem>
-								</SubHeadFeatColumn>
-							</SubHeaderColumn>
-						</RightColumn>
-					</MainGrid>
+					{this._renderMainGrid()}
 				</WrapperGrid>
 			</Section_2>
 		);
