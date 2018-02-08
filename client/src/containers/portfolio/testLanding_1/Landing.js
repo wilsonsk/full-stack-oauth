@@ -21,6 +21,8 @@ class Landing extends Component {
 			<Wrapper>
 				<Hero />
 				<Features />
+				<Hero />
+				<Hero />
 			</Wrapper>
 		);
 	}

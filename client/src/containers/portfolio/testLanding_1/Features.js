@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import ReactDOM from 'react-dom';
 
 import * as actions from '../../../actions';
 
@@ -9,14 +10,16 @@ class Features extends Component {
 	constructor(props) {
 		super(props);
 		this.props.setGrid(false);
-		window.addEventListener("resize", this.checkWidth.bind(this));
+		window.addEventListener("resize", this._checkWidth.bind(this));
+		window.addEventListener("scroll", this._parallax.bind(this));
 		this.state = {
-			mobile: ''
+			mobile: '',
+			parallaxTop: '',
 		}
 	}
 
 	componentDidMount() {
-		this.checkWidth();
+		this._checkWidth();
 	}
 
 	_clickGrid() {
@@ -26,7 +29,7 @@ class Features extends Component {
 		this.props.setGrid(!grid[gridIndex]);
 	}
 
-	checkWidth() {
+	_checkWidth() {
 		if(window.innerWidth < 768) {
 			this.setState({
 				mobile: true
@@ -36,6 +39,14 @@ class Features extends Component {
 				mobile: false
 			});
 		}
+	}
+
+	_parallax() {
+		var el = ReactDOM.findDOMNode(this.main);
+		alert(this.main);
+		this.setState({
+			parallaxTop: el.getBoundingClientRect().y + 'px'
+		});
 	}
 
 	_renderMainGrid() {
@@ -182,7 +193,7 @@ class Features extends Component {
 		var grid = this.props.grid,
 		    gridIndex = grid.length-1;
 		return (
-			<Section_2 grid={grid[gridIndex]}>
+			<Section_2 grid={grid[gridIndex]} ref={(el) => this.main = el}>
 				<WrapperGrid grid={grid[gridIndex]}>
 					<LeftSpace>
 						Sky Wilson
