@@ -42,10 +42,20 @@ class Features extends Component {
 	}
 
 	_parallax() {
-		this.setState({
-			parallaxTop: this.main.getBoundingClientRect().top + 'px'
-		});
-		alert(this.state.parallaxTop);
+		let main = this.main.getBoundingClientRect().top*-1;
+		let height = this.main.getBoundingClientRect().height;
+		let windowHeight = window.innerHeight;
+
+		if(main >= 0 && main <= height) {
+			this.setState({
+				parallaxTop: main + 'px',
+				within: true
+			});
+		} else {
+			this.setState({
+				within: false
+			});
+		}
 	}
 
 	_renderMainGrid() {
@@ -54,7 +64,7 @@ class Features extends Component {
 		if(this.state.mobile) {
 			return (
 				<MainGrid mobile={this.state.mobile} grid={grid[gridIndex]}>
-					<Header grid={grid[gridIndex]}>
+					<Header grid={grid[gridIndex]} within={this.state.within} parallax={this.state.parallaxTop}> 
 						<WhiteText>Designer</WhiteText>
 					</Header>
 					<SubHeaderColumn grid={grid[gridIndex]}>
@@ -93,7 +103,7 @@ class Features extends Component {
 						</SubHeadFeatColumn>
 					</SubHeaderColumn>
 					<Header grid={grid[gridIndex]}>
-						test
+						<WhiteText>SEO</WhiteText>
 					</Header>
 					<SubHeaderColumn grid={grid[gridIndex]}>
 						<SubHead grid={grid[gridIndex]}>
