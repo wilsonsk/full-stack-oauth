@@ -8,6 +8,10 @@ const SubHead = styled.h4`
 	font-size: 0.5em;
   }
 
+  @media(min-width: 768px) {
+	font-size: 0.75em;
+  }
+
   border: ${props => props.grid ? 'solid white 1px' : null};
 
 `;

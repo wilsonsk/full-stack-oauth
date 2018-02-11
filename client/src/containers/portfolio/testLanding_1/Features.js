@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 
 import * as actions from '../../../actions';
 
-import { Section_2, WrapperGrid, MainGrid, LeftColumn, RightColumn, Header, SubHeaderColumn, SubHead, SubHeadFeatColumn, SubHeadFeatItem, LeftSpace, WhiteText } from '../../../components/presentational/portfolio/testLanding_1/features';
+import { Section_2, WrapperGrid, MainGrid, LeftColumn, RightColumn, Header, SubHeaderColumn, SubHead, SubHeadFeatColumn, SubHeadFeatItem, LeftSpace, WhiteText, ParallaxObj } from '../../../components/presentational/portfolio/testLanding_1/features';
 
 class Features extends Component {
 	constructor(props) {
@@ -46,15 +46,28 @@ class Features extends Component {
 		let height = this.main.getBoundingClientRect().height;
 		let windowHeight = window.innerHeight;
 
-		if(main >= 0 && main <= height) {
-			this.setState({
-				parallaxTop: main + 'px',
-				within: true
-			});
+		if(this.state.mobile) {
+			if(main >= -400 && main <= height) {
+				this.setState({
+					parallaxTop: height - main + 'px',
+					within: true
+				});
+			} else {
+				this.setState({
+					within: false
+				});
+			}
 		} else {
-			this.setState({
-				within: false
-			});
+			if(main >= -100 && main <= height) {
+				this.setState({
+					parallaxTop: height - main + 'px',
+					within: true
+				});
+			} else {
+				this.setState({
+					within: false
+				});
+			}
 		}
 	}
 
@@ -64,22 +77,22 @@ class Features extends Component {
 		if(this.state.mobile) {
 			return (
 				<MainGrid mobile={this.state.mobile} grid={grid[gridIndex]}>
-					<Header grid={grid[gridIndex]} within={this.state.within} parallax={this.state.parallaxTop}> 
+					<Header grid={grid[gridIndex]}> 
 						<WhiteText>Designer</WhiteText>
 					</Header>
 					<SubHeaderColumn grid={grid[gridIndex]}>
 						<SubHead grid={grid[gridIndex]}>
-							<WhiteText>Testing</WhiteText>
+							<WhiteText>SubHead</WhiteText>
 						</SubHead>
 						<SubHeadFeatColumn grid={grid[gridIndex]}>
-							<SubHeadFeatItem grid={grid[gridIndex]}>
-							
+							<SubHeadFeatItem grid={grid[gridIndex]} within={this.state.within} trans={'opacity 1s'}>
+								feat 1
 							</SubHeadFeatItem>
-							<SubHeadFeatItem grid={grid[gridIndex]}>
-
+							<SubHeadFeatItem grid={grid[gridIndex]} within={this.state.within} trans={'opacity 3s'}>
+								feat 2
 							</SubHeadFeatItem>
-							<SubHeadFeatItem grid={grid[gridIndex]}>
-	
+							<SubHeadFeatItem grid={grid[gridIndex]} within={this.state.within} trans={'opacity 5s'}>
+								feat 3
 							</SubHeadFeatItem>
 						</SubHeadFeatColumn>
 					</SubHeaderColumn>
@@ -88,17 +101,17 @@ class Features extends Component {
 					</Header>
 					<SubHeaderColumn grid={grid[gridIndex]}>
 						<SubHead grid={grid[gridIndex]}>
-							<WhiteText>Testing</WhiteText>
+							<WhiteText>SubHead</WhiteText>
 						</SubHead>
 						<SubHeadFeatColumn grid={grid[gridIndex]}>
-							<SubHeadFeatItem grid={grid[gridIndex]}>
-							
+							<SubHeadFeatItem grid={grid[gridIndex]} within={this.state.within} trans={'opacity 1s'}>
+								Feat 1
 							</SubHeadFeatItem>
-							<SubHeadFeatItem grid={grid[gridIndex]}>
-
+							<SubHeadFeatItem grid={grid[gridIndex]} within={this.state.within} trans={'opacity 3s'}>
+								Feat 2
 							</SubHeadFeatItem>
-							<SubHeadFeatItem grid={grid[gridIndex]}>
-	
+							<SubHeadFeatItem grid={grid[gridIndex]} within={this.state.within} trans={'opacity 5s'}>
+								Feat 3	
 							</SubHeadFeatItem>
 						</SubHeadFeatColumn>
 					</SubHeaderColumn>
@@ -107,17 +120,17 @@ class Features extends Component {
 					</Header>
 					<SubHeaderColumn grid={grid[gridIndex]}>
 						<SubHead grid={grid[gridIndex]}>
-							Testing
+							<WhiteText>SubHead</WhiteText>
 						</SubHead>
 						<SubHeadFeatColumn grid={grid[gridIndex]}>
-							<SubHeadFeatItem grid={grid[gridIndex]}>
-							
+							<SubHeadFeatItem grid={grid[gridIndex]} within={this.state.within} trans={'opacity 1s'}>
+								Feat 1
 							</SubHeadFeatItem>
-							<SubHeadFeatItem grid={grid[gridIndex]}>
-
+							<SubHeadFeatItem grid={grid[gridIndex]} within={this.state.within} trans={'opacity 3s'}>
+								Feat 2
 							</SubHeadFeatItem>
-							<SubHeadFeatItem grid={grid[gridIndex]}>
-	
+							<SubHeadFeatItem grid={grid[gridIndex]} within={this.state.within} trans={'opacity 5s'}>
+								Feat3	
 							</SubHeadFeatItem>
 						</SubHeadFeatColumn>
 					</SubHeaderColumn>
@@ -128,67 +141,63 @@ class Features extends Component {
 				<MainGrid grid={grid[gridIndex]}>
 					<LeftColumn grid={grid[gridIndex]}>
 						<Header grid={grid[gridIndex]}>
-							Test
-
+							<WhiteText>Design</WhiteText>
 						</Header>
 						<Header grid={grid[gridIndex]}>
-							Test
-
+							<WhiteText>Development</WhiteText>
 						</Header>
 						<Header grid={grid[gridIndex]}>
-							Test
-
+							<WhiteText>SEO</WhiteText>
 						</Header>
 					</LeftColumn>
 					<RightColumn grid={grid[gridIndex]}>
 						<SubHeaderColumn grid={grid[gridIndex]}>
 							<SubHead grid={grid[gridIndex]}>
-							Testing
-
+								<WhiteText>SubHead</WhiteText>
 							</SubHead>
 							<SubHeadFeatColumn grid={grid[gridIndex]}>
-								<SubHeadFeatItem grid={grid[gridIndex]}>
-
+								<SubHeadFeatItem grid={grid[gridIndex]} within={this.state.within} trans={'opacity 1s'}>
+									feat 1
 								</SubHeadFeatItem>
-								<SubHeadFeatItem grid={grid[gridIndex]}>
-
+								<SubHeadFeatItem grid={grid[gridIndex]} within={this.state.within} trans={'opacity 3s'}>
+									feat 2
 								</SubHeadFeatItem>
-								<SubHeadFeatItem grid={grid[gridIndex]}>
-
+								<SubHeadFeatItem grid={grid[gridIndex]} within={this.state.within} trans={'opacity 5s'}>
+									feat 3
 								</SubHeadFeatItem>
 							</SubHeadFeatColumn>
 						</SubHeaderColumn>
 						<SubHeaderColumn grid={grid[gridIndex]}>
 							<SubHead grid={grid[gridIndex]}>
-							Testing
+								<WhiteText>SubHead</WhiteText>
 
 							</SubHead>
 							<SubHeadFeatColumn grid={grid[gridIndex]}>
-								<SubHeadFeatItem grid={grid[gridIndex]}>
-
+								<SubHeadFeatItem grid={grid[gridIndex]} within={this.state.within} trans={'opacity 1s'}>
+									Feat 1
 								</SubHeadFeatItem>
-								<SubHeadFeatItem grid={grid[gridIndex]}>
-
+								<SubHeadFeatItem grid={grid[gridIndex]} within={this.state.within} trans={'opacity 3s'}>
+									Feat 2
 								</SubHeadFeatItem>
-								<SubHeadFeatItem grid={grid[gridIndex]}>
-
+								<SubHeadFeatItem grid={grid[gridIndex]} within={this.state.within} trans={'opacity 5s'}>
+									Feat 3
 								</SubHeadFeatItem>
 							</SubHeadFeatColumn>
 						</SubHeaderColumn>
 						<SubHeaderColumn grid={grid[gridIndex]}>
 							<SubHead grid={grid[gridIndex]}>
-							Testing
+								<WhiteText>SubHead</WhiteText>
 
 							</SubHead>
 							<SubHeadFeatColumn grid={grid[gridIndex]}>
-								<SubHeadFeatItem grid={grid[gridIndex]}>
-
+								<SubHeadFeatItem grid={grid[gridIndex]} within={this.state.within} trans={'opacity 1s'}>
+									Feat 1
 								</SubHeadFeatItem>
-								<SubHeadFeatItem grid={grid[gridIndex]}>
-
+								<SubHeadFeatItem grid={grid[gridIndex]} within={this.state.within} trans={'opacity 3s'}>
+									Feat 2
 								</SubHeadFeatItem>
-								<SubHeadFeatItem grid={grid[gridIndex]}>
-
+								<SubHeadFeatItem grid={grid[gridIndex]} within={this.state.within} trans={'opacity 5s'}>
+									Feat 3
 								</SubHeadFeatItem>
 							</SubHeadFeatColumn>
 						</SubHeaderColumn>

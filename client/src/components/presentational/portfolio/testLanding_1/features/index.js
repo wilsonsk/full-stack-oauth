@@ -10,3 +10,4 @@ export * from './SubHeadFeatColumn';
 export * from './SubHeadFeatItem';
 export * from './LeftSpace';
 export * from './WhiteText';
+export * from './ParallaxObj';
