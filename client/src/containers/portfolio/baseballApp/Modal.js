@@ -5,7 +5,7 @@ import * as actions from '../../../actions';
 
 import axios from 'axios';
 
-import { Wrapper, RootGrid, Headline } from '../../../components/presentational/portfolio/baseballApp/Section_1/Modal';
+import { Wrapper, RootGrid, Headline, Form } from '../../../components/presentational/portfolio/baseballApp/Section_1/Modal';
 
 class Modal extends Component{
 	constructor(props) {
@@ -26,22 +26,19 @@ class Modal extends Component{
 	_renderUser() {
 		if(this.props.auth) {
 			return (
-				<form onSubmit={this._addPlayer.bind(this)}>
-					<RootGrid>
-					<div>{JSON.stringify(this.props.auth.team)}</div>
-						<select ref={(input) => { this.playerPosition = input; }}>
-							<option value="pitcher">P</option>
-							<option value="catcher">C</option>
-							<option value="firstbase">1B</option>
-							<option value="secondbase">2B</option>
-							<option value="thirdbase">3B</option>
-							<option value="shortstop">SS</option>
-							<option value="outfield">OF</option>
-						</select>
-						<input ref={(input) => { this.playerName = input; }} type="text" placeholder="Player Name" />
-						<input type="submit" />
-					</RootGrid>
-				</form>
+				<Form onSubmit={this._addPlayer.bind(this)}>
+					<select ref={(input) => { this.playerPosition = input; }}>
+						<option value="pitcher">P</option>
+						<option value="catcher">C</option>
+						<option value="firstbase">1B</option>
+						<option value="secondbase">2B</option>
+						<option value="thirdbase">3B</option>
+						<option value="shortstop">SS</option>
+						<option value="outfield">OF</option>
+					</select>
+					<input ref={(input) => { this.playerName = input; }} type="text" placeholder="Player Name" />
+					<input type="submit" value="Add Player" />
+				</Form>
 			);
 		} else {
 			return (
