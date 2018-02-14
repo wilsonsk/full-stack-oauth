@@ -10,6 +10,7 @@ import Gallery from './portfolio/gallery/Gallery';
 
 import MullerBrockman from './portfolio/mullerBrockmanLanding/MullerBrockman';
 import BaseballApp from './portfolio/baseballApp/BaseballApp';
+import Dashboard from './portfolio/baseballApp/Dashboard';
 import Landing from './portfolio/testLanding_1/Landing';
 
 const styles = {
@@ -30,6 +31,7 @@ class App extends Component {
 			<div style={styles.fontMontserrat}>
 		    		<Route exact path="/" component={MullerBrockman} />
 		    		<Route exact path="/baseball" component={BaseballApp} />
+		    		<Route exact path="/baseball/dashboard" component={Dashboard} />
 		    		<Route exact path="/test" component={Landing} />
 				<Route exact path="/portfolio" component={Portfolio} />
 				<Route exact path="/landing" component={LandingPage} />

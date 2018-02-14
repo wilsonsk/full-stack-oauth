@@ -9,7 +9,7 @@ module.exports = app => {
   );
 
   app.get('/auth/google/callback', passport.authenticate('google'),(req, res) => {
-	res.redirect('/baseball');
+	res.redirect('/baseball/dashboard');
   });
 
   app.get('/api/current_user', (req, res) => {
