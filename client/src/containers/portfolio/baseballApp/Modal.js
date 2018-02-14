@@ -5,7 +5,7 @@ import * as actions from '../../../actions';
 
 import axios from 'axios';
 
-import { Wrapper, RootGrid, Headline, Form } from '../../../components/presentational/portfolio/baseballApp/Section_1/Modal';
+import { Wrapper, RootGrid, Headline, Form, AuthLink } from '../../../components/presentational/portfolio/baseballApp/Section_1/Modal';
 
 class Modal extends Component{
 	constructor(props) {
@@ -46,7 +46,9 @@ class Modal extends Component{
 					<Headline> 
 						Create Account
 					</Headline>
-					<a href="/auth/google">GoogleAuth</a> 
+					<AuthLink href="/auth/google">
+						Log in with Google
+					</AuthLink>
 				</RootGrid>
 			);
 		}
