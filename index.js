@@ -38,6 +38,7 @@ require('./routes/authRoutes')(app);
 require('./routes/paymentsRoutes')(app);
 require('./routes/surveyRoutes')(app);
 require('./routes/photosRoutes')(app);
+require('./routes/addPlayer')(app);
 
 if(process.env.NODE_ENV === 'production') {
 	// serve prod assets

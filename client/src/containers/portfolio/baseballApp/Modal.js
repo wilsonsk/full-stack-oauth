@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import * as actions from '../../../actions';
 
+import axios from 'axios';
+
 import { Wrapper, RootGrid, Headline } from '../../../components/presentational/portfolio/baseballApp/Section_1/Modal';
 
 class Modal extends Component{
@@ -14,20 +16,39 @@ class Modal extends Component{
 		alert('hi ' + JSON.stringify(this.props.auth));
 	}
 
+	async _addPlayer() {
+		const res = await axios.post('/api/addPlayer/', {
+			playerPosition: this.playerPosition.value,
+			playerName: this.playerName.value,
+			playerStats: this.playerStats.value,
+		});
+	}
+
 	_renderUser() {
 		if(this.props.auth) {
 			return (
-				<div>{this.props.auth._id}</div>	
+				<RootGrid>
+					<select ref={(input) => { this.playerPosition = input; }}>
+						<option value="pitcher">P</option>
+						<option value="catcher">C</option>
+						<option value="firstbase">1B</option>
+						<option value="secondbase">2B</option>
+						<option value="thirdbase">3B</option>
+						<option value="shortstop">SS</option>
+						<option value="outfield">OF</option>
+					</select>
+					<input ref={(input) => { this.playerName = input; }} type="text" placeholder="Player Name" />
+					<input type="button" value="add player" onClick={this._addPlayer.bind(this)}/>
+				</RootGrid>
 			);
 		} else {
 			return (
-				<div>
+				<RootGrid>
 					<Headline> 
 						Create Account
 					</Headline>
 					<a href="/auth/google">GoogleAuth</a> 
-					<input type="button" onClick={this.handleLogin.bind(this)} value="Sign Up" />
-				</div>
+				</RootGrid>
 			);
 		}
 	}
@@ -35,9 +56,7 @@ class Modal extends Component{
 	render() {
 		return(
 			<Wrapper>
-				<RootGrid>
-					{this._renderUser()}
-				</RootGrid>
+				{this._renderUser()}
 			</Wrapper>
 		);
 		
