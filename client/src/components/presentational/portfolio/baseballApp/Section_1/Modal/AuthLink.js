@@ -8,7 +8,8 @@ const AuthLink = styled.a`
   background-color: blue;
   border-radius: 50px;
   display:flex;
-  align-items: center;
+  justify-content: center;
+align-items: center;
   box-shadow: 2px 2px 2px black;
 
   &:hover {
