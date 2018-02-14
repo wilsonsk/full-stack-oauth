@@ -20,26 +20,28 @@ class Modal extends Component{
 		const res = await axios.post('/api/addPlayer/', {
 			playerPosition: this.playerPosition.value,
 			playerName: this.playerName.value,
-			playerStats: this.playerStats.value,
 		});
 	}
 
 	_renderUser() {
 		if(this.props.auth) {
 			return (
-				<RootGrid>
-					<select ref={(input) => { this.playerPosition = input; }}>
-						<option value="pitcher">P</option>
-						<option value="catcher">C</option>
-						<option value="firstbase">1B</option>
-						<option value="secondbase">2B</option>
-						<option value="thirdbase">3B</option>
-						<option value="shortstop">SS</option>
-						<option value="outfield">OF</option>
-					</select>
-					<input ref={(input) => { this.playerName = input; }} type="text" placeholder="Player Name" />
-					<input type="button" value="add player" onClick={this._addPlayer.bind(this)}/>
-				</RootGrid>
+				<form onSubmit={this._addPlayer.bind(this)}>
+					<RootGrid>
+					<div>{JSON.stringify(this.props.auth.team)}</div>
+						<select ref={(input) => { this.playerPosition = input; }}>
+							<option value="pitcher">P</option>
+							<option value="catcher">C</option>
+							<option value="firstbase">1B</option>
+							<option value="secondbase">2B</option>
+							<option value="thirdbase">3B</option>
+							<option value="shortstop">SS</option>
+							<option value="outfield">OF</option>
+						</select>
+						<input ref={(input) => { this.playerName = input; }} type="text" placeholder="Player Name" />
+						<input type="submit" />
+					</RootGrid>
+				</form>
 			);
 		} else {
 			return (
