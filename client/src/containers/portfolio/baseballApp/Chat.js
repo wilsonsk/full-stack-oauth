@@ -18,6 +18,7 @@ class Chat extends Component{
 	componentDidMount() {
 		this.addEventListeners();
 		this.initColor();
+		this.getUserMedia();
 	}
 
 	addEventListeners() {
@@ -25,6 +26,16 @@ class Chat extends Component{
 		window.addEventListener('keypress', () => {
 			socket.emit('typing');
 		});
+	}
+
+	getUserMedia() {
+		navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
+
+		function mediaCB(stream) {
+			this.setState({ videoSrc: window.URL.createObjectURL(stream) });
+		}
+
+		navigator.getUserMedia({video:true, audio:false}, mediaCB, (err)=>{alert(err)});
 	}
 
 	initUser() {
@@ -67,9 +78,10 @@ class Chat extends Component{
 		return(
 			<Wrapper>
 				<div>chat status: {this.state.status}</div>
+				<video autoPlay ref={(vd)=>{this.video=vd;}} />
 				<div ref={(colorDiv)=>{this.colorDiv = colorDiv;}} />
 				<select ref={(color) => {this.color = color;}} onChange={() => this.setState({ color: this.color.value })}>
-					<option value="red" onChange>
+					<option value="red">
 						red
 					</option>
 					<option value="blue">
