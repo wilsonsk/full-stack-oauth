@@ -7,6 +7,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const bodyParser = require('body-parser');
+const socket = require('socket.io');
+
 const keys = require('./config/keys');
 
 mongoose.connect(keys.mongoURI);
@@ -51,4 +53,23 @@ if(process.env.NODE_ENV === 'production') {
 }
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT);
+const server = app.listen(PORT);
+const io = socket.listen(server);
+
+io.on('connection', (socket) => {
+	console.log('user connected');
+
+	socket.on('connected', (data) => {
+		console.log(data);
+	});
+
+	socket.on('color change', (color) => {
+		console.log(color);
+		io.sockets.emit('gotIt');
+	});
+
+	socket.on('typing', () => {
+		console.log('typing');
+		socket.broadcast.emit('typing');
+	});
+});

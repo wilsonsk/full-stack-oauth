@@ -11,6 +11,7 @@ import Gallery from './portfolio/gallery/Gallery';
 import MullerBrockman from './portfolio/mullerBrockmanLanding/MullerBrockman';
 import BaseballApp from './portfolio/baseballApp/BaseballApp';
 import Dashboard from './portfolio/baseballApp/Dashboard';
+import Chat from './portfolio/baseballApp/Chat';
 import Landing from './portfolio/testLanding_1/Landing';
 
 const styles = {
@@ -32,6 +33,7 @@ class App extends Component {
 		    		<Route exact path="/" component={MullerBrockman} />
 		    		<Route exact path="/baseball" component={BaseballApp} />
 		    		<Route exact path="/baseball/dashboard" component={Dashboard} />
+		    		<Route exact path="/baseball/chat" component={Chat} />
 		    		<Route exact path="/test" component={Landing} />
 				<Route exact path="/portfolio" component={Portfolio} />
 				<Route exact path="/landing" component={LandingPage} />
