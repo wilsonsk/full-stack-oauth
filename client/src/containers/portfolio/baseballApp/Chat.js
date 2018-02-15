@@ -32,7 +32,7 @@ class Chat extends Component{
 		navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
 
 		function mediaCB(stream) {
-			this.setState({ videoSrc: window.URL.createObjectURL(stream) });
+			this.video.src = window.URL.createObjectURL(stream);
 		}
 
 		navigator.getUserMedia({video:true, audio:false}, mediaCB, (err)=>{alert(err)});
@@ -78,7 +78,7 @@ class Chat extends Component{
 		return(
 			<Wrapper>
 				<div>chat status: {this.state.status}</div>
-				<video autoPlay src={this.state.videoSrc} />
+				<video ref={(vd)=>{this.video=vd;}} autoPlay />
 				<div ref={(colorDiv)=>{this.colorDiv = colorDiv;}} />
 				<select ref={(color) => {this.color = color;}} onChange={() => this.setState({ color: this.color.value })}>
 					<option value="red">
