@@ -78,7 +78,7 @@ class Chat extends Component{
 		return(
 			<Wrapper>
 				<div>chat status: {this.state.status}</div>
-				<video autoPlay ref={(vd)=>{this.video=vd;}} />
+				<video autoPlay src={this.state.videoSrc} />
 				<div ref={(colorDiv)=>{this.colorDiv = colorDiv;}} />
 				<select ref={(color) => {this.color = color;}} onChange={() => this.setState({ color: this.color.value })}>
 					<option value="red">
